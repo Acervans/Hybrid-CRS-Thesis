@@ -1,0 +1,132 @@
+% arara: clean: {files: [thesis_mui2icsi.aux, thesis_mui2icsi.idx, thesis_mui2icsi.ilg, thesis_mui2icsi.ind, thesis_mui2icsi.bbl, thesis_mui2icsi.bcf, thesis_mui2icsi.blg, thesis_mui2icsi.run.xml, thesis_mui2icsi.fdb_latexmk, thesis_mui2icsi.fls, thesis_mui2icsi.loe, thesis_mui2icsi.lof, thesis_mui2icsi.lol, thesis_mui2icsi.lot, thesis_mui2icsi.ltb, thesis_mui2icsi.out, thesis_mui2icsi.toc, thesis_mui2icsi.upa, thesis_mui2icsi.upb, thesis_mui2icsi.acn, thesis_mui2icsi.acr, thesis_mui2icsi.alg, thesis_mui2icsi.glg, thesis_mui2icsi.glo, thesis_mui2icsi.gls, thesis_mui2icsi.glsdefs, thesis_mui2icsi.idx,  thesis_mui2icsi.ilg, thesis_mui2icsi.xdy, thesis_mui2icsi.loa, thesis_mui2icsi.gnuploterrors , thesis_mui2icsi.mw, thesis_mui2icsi.fdb_latexmk ]}
+% arara: pdflatex: {shell: yes}
+% arara: makeglossaries
+% arara: makeindex: {style: thesis_mui2icsi.ist }
+% arara: bibtex
+% arara: pdflatex: {shell: yes}
+% arara: pdflatex: {shell: yes}
+% arara: clean: {files: [thesis_mui2icsi.aux, thesis_mui2icsi.idx, thesis_mui2icsi.ilg, thesis_mui2icsi.ind, thesis_mui2icsi.bbl, thesis_mui2icsi.bcf, thesis_mui2icsi.blg, thesis_mui2icsi.run.xml, thesis_mui2icsi.fdb_latexmk, thesis_mui2icsi.fls, thesis_mui2icsi.loe, thesis_mui2icsi.lof, thesis_mui2icsi.lol, thesis_mui2icsi.lot, thesis_mui2icsi.ltb, thesis_mui2icsi.out, thesis_mui2icsi.toc, thesis_mui2icsi.upa, thesis_mui2icsi.upb, thesis_mui2icsi.acn, thesis_mui2icsi.acr, thesis_mui2icsi.alg, thesis_mui2icsi.glg, thesis_mui2icsi.glo, thesis_mui2icsi.gls, thesis_mui2icsi.glsdefs, thesis_mui2icsi.idx,  thesis_mui2icsi.ilg, thesis_mui2icsi.xdy, thesis_mui2icsi.loa, thesis_mui2icsi.gnuploterrors , thesis_mui2icsi.mw, thesis_mui2icsi.fdb_latexmk ]}
+
+\documentclass[english,epsbased,copyright,final,printable,covers,extendedindex,firstnumbered,tfm,gnuplot,loc,loe,lof,lot]{tfgtfmthesisuam}
+
+\advisor{Alejandro Bellogín Kouki}
+\levelin{Computer Science and Engineering}
+\title{A Hybrid Conversational Recommender System by integrating LLMs}
+\subtitle{Conversation Design \& User Profiling for Explainable Recommendations}
+\author{Javier Wang Zhou}
+\privateaddress{C\textbackslash\ Francisco Tomás y Valiente Nº 11}
+\copyrightdate{April 28, 2025}
+
+\dedication{To my family \& friends}
+\famouscite{We are surrounded by data, but starved for insights. \\[0.1em] \begin{flushright}Jay Baer\end{flushright}}
+% \prefacefile{inicio/prefacio}
+\ackfile{mui2icsi/prologue/agradecimientos}
+\resumenfile{mui2icsi/prologue/resumen}
+\abstractfile{mui2icsi/prologue/abstract}
+
+\coverdata
+{
+  Escuela Politécnica Superior \\
+  Universidad Autónoma de Madrid \\
+  C\textbackslash Francisco Tomás y Valiente nº 11
+}
+
+\bibliographyconfig{tfgtfmthesisuam}
+
+\usepackage{hyperref}
+\usepackage{svg}
+\usepackage{paralist}
+\usepackage{multicol}
+\usepackage{multirow}
+
+\setlength{\plitemsep}{0.5em}
+
+\svgpath{{mui2icsi/img/}}
+\datadir{mui2icsi/data}
+\graphicsdir{mui2icsi/img}
+\logosdir{mui2icsi/img}
+\codesdir{mui2icsi/codes}
+
+\input{acronyms}
+
+\begin{document}
+
+  \chapter{Introduction\label{CAP:INTRODUCTION}}{mui2icsi/1_introduction/introduction}
+    \section{Motivation\label{SEC:MOTIVATION}}{mui2icsi/1_introduction/motivation}
+    \section{Objectives\label{SEC:OBJECTIVES}}{mui2icsi/1_introduction/objectives}
+    \section{Work Structure\label{SEC:WORK_STRUCT}}{mui2icsi/1_introduction/work_structure}
+
+  \chapter{State of the Art\label{CAP:STATE_OF_THE_ART}}{mui2icsi/2_state_of_the_art/state_of_the_art}
+    \section{Large Language Models\label{SEC:LLM}}{mui2icsi/2_state_of_the_art/llm/llm}
+      \subsection{LLM Frameworks\label{SS:LLMFRAMEWORKS}}{mui2icsi/2_state_of_the_art/llm/frameworks}
+      % GraphRAG
+      \subsection{Retrieval-Augmented Generation\label{SS:RAG}}{mui2icsi/2_state_of_the_art/llm/rag}
+      \subsection{Function Calling\label{SS:FUNCTION_CALLING}}{mui2icsi/2_state_of_the_art/llm/function_calling}
+      \subsection{Fine-tuning\label{SS:FINE_TUNING}}{mui2icsi/2_state_of_the_art/llm/fine_tuning}
+
+    \section{Recommender Systems\label{SEC:RECSYS}}{mui2icsi/2_state_of_the_art/recsys/recsys}
+      % Hybrid models
+      \subsection{Model Classification\label{SS:MODELCLASS}}{mui2icsi/2_state_of_the_art/recsys/model_classification}
+      \subsection{Evaluation\label{SS:RECSYSEVAL}}{mui2icsi/2_state_of_the_art/recsys/evaluation}
+
+    \section{Conversational Recommender Systems\label{SEC:CRS}}{mui2icsi/2_state_of_the_art/crs/crs}
+      \subsection{Latest Developments\label{SS:CRSDEVS}}{mui2icsi/2_state_of_the_art/crs/latest_developments}
+    % Mention similar projects like this, justify contributions?
+
+    \section{Explainability in Recommendation\label{SEC:EXPLAINABILITY}}{mui2icsi/2_state_of_the_art/explainability/explainability}
+      \subsection{Popular Methods\label{SS:POPMETHODS}}{mui2icsi/2_state_of_the_art/explainability/popular_methods}
+
+  \chapter{Methodology\label{CAP:METHODOLOGY}}{mui2icsi/3_methodology/methodology}
+    \section{Research Framework\label{SEC:RESEARCHFW}}{mui2icsi/3_methodology/research_framework/research_framework}
+      % Event-driven workflow
+      \subsection{Conversation Workflow and Preference Elicitation\label{SS:CONVPREF}}{mui2icsi/3_methodology/research_framework/conversation_workflow}
+      \subsection{Retrieval-Augmented Generation for Contextual Recommendations\label{SS:RAGRECS}}{mui2icsi/3_methodology/research_framework/rag_recs}
+      \subsection{Expert Recommender Model for Personalized Recommendations\label{SS:EXPERTRECSYS}}{mui2icsi/3_methodology/research_framework/expert_recsys}
+      \subsection{Explainability using Natural Language Explanations\label{SS:EXPLAINNLE}}{mui2icsi/3_methodology/research_framework/explainability}
+
+    % TODO (Intro) LLM Workflow (Explain Event-driven, RAG, Function Calls, Final recommendation generation)
+    \section{Hybrid Conversational Recommender System\label{SEC:HYBRIDCRS}}{mui2icsi/3_methodology/hybrid_crs/hybrid_crs}
+      \subsection{User Profiling\label{SS:USERPROF}}{mui2icsi/3_methodology/hybrid_crs/user_profiling}
+      \subsection{Integration of Retrieval-Augmented Generation\label{SS:INTEGRAGRECS}}{mui2icsi/3_methodology/hybrid_crs/rag_recs}
+      \subsection{Integration of an Expert Recommender Model\label{SS:INTEGEXPERTRECSYS}}{mui2icsi/3_methodology/hybrid_crs/expert_recsys/expert_recsys}
+        \subsubsection{Recommendation Framework\label{SSS:RECFRAMEWORK}}{mui2icsi/3_methodology/hybrid_crs/expert_recsys/recsys_framework}
+        \subsubsection{Model Selection\label{SSS:MODELSELECT}}{mui2icsi/3_methodology/hybrid_crs/expert_recsys/model_selection}
+      \subsection{Generation of Natural Language Explanations\label{SS:GENEXPLAIN}}{mui2icsi/3_methodology/hybrid_crs/explainability}
+
+  \chapter{Experiments and Results\label{CAP:EXPRES}}{mui2icsi/4_experiments/experiments}
+    \section{Environment\label{SEC:ENVIRONMENT}}{mui2icsi/4_experiments/environment}
+
+    \section{Datasets\label{SEC:DATASETS}}{mui2icsi/4_experiments/datasets/datasets}
+      \subsection{MovieLens\label{SS:MOVIELENS}}{mui2icsi/4_experiments/datasets/movielens}
+      \subsection{LastFM\label{SS:LASTFM}}{mui2icsi/4_experiments/datasets/lastfm}
+      \subsection{Steam\label{SS:STEAM}}{mui2icsi/4_experiments/datasets/steam}
+
+    \section{Experiments\label{SEC:EXPERIMENTS}}{mui2icsi/4_experiments/experiments/experiments}
+      \subsection{Recommendation Evaluation\label{SS:RECEVAL}}{mui2icsi/4_experiments/experiments/rec_eval}
+      \subsection{Retrieval Evaluation\label{SS:RAGEVAL}}{mui2icsi/4_experiments/experiments/rag_eval}
+      \subsection{Usability Testing\label{SS:USABILITYTEST}}{mui2icsi/4_experiments/experiments/usability_testing/usability_testing}
+        \subsubsection{Guided Testing\label{SSS:GUIDEDTEST}}{mui2icsi/4_experiments/experiments/usability_testing/guided_testing}
+        \subsubsection{System Usability Scale (SUS)\label{SSS:SUS}}{mui2icsi/4_experiments/experiments/usability_testing/sus}
+      \subsection{Explainability Evaluation\label{SS:EXPLAINEVAL}}{mui2icsi/4_experiments/experiments/explain_eval}
+
+    \section{Results\label{SEC:RESULTS}}{mui2icsi/4_experiments/results/results}
+      \subsection{Recommendation Accuracy\label{SS:RECACC}}{mui2icsi/4_experiments/results/rec_acc}
+      \subsection{Retrieval Accuracy\label{SS:RAGACC}}{mui2icsi/4_experiments/results/rag_acc}
+      % TODO ANOVA / t-test...
+      \subsection{System Usability\label{SS:USABILITY}}{mui2icsi/4_experiments/results/usability/usability}
+        \subsubsection{User Satisfaction\label{SSS:USERSAT}}{mui2icsi/4_experiments/results/usability/user_satisfaction}
+        \subsubsection{User Feedback\label{SSS:USERFEEDBACK}}{mui2icsi/4_experiments/results/usability/user_feedback}
+      \subsection{Explainability Impact\label{SS:EXPLAIN}}{mui2icsi/4_experiments/results/explain}
+
+  \chapter{Conclusions and Future Work\label{CAP:CONCLUSIONS}}
+    \section{Conclusions\label{SEC:CONCLUSIONS}}{mui2icsi/5_conclusions/conclusions}
+
+    \section{Future Work\label{SEC:FUTUREWORK}}{mui2icsi/5_conclusions/futurework}
+
+  \appendix
+  % \chapter{Web Application\label{AP:WEBAPP}}{mui2icsi/appendix/webapp}
+  % \chapter{External Libraries\label{AP:EXTLIB}}{mui2icsi/appendix/extlib}
+  % \chapter{Data Preprocessing\label{AP:DATAPROC}}{mui2icsi/appendix/dataproc}
+  % \chapter{Model Implementations\label{AP:MODELS}}{mui2icsi/appendix/models}
+
+\end{document}

@@ -1,0 +1,161 @@
+% arara: clean: {files: [thesis_muii.aux, thesis_muii.idx, thesis_muii.ilg, thesis_muii.ind, thesis_muii.bbl, thesis_muii.bcf, thesis_muii.blg, thesis_muii.run.xml, thesis_muii.fdb_latexmk, thesis_muii.fls, thesis_muii.loe, thesis_muii.lof, thesis_muii.lol, thesis_muii.lot, thesis_muii.ltb, thesis_muii.out, thesis_muii.toc, thesis_muii.upa, thesis_muii.upb, thesis_muii.acn, thesis_muii.acr, thesis_muii.alg, thesis_muii.glg, thesis_muii.glo, thesis_muii.gls, thesis_muii.glsdefs, thesis_muii.idx,  thesis_muii.ilg, thesis_muii.xdy, thesis_muii.loa, thesis_muii.gnuploterrors , thesis_muii.mw, thesis_muii.fdb_latexmk ]}
+% arara: pdflatex: {shell: yes}
+% arara: makeglossaries
+% arara: makeindex: {style: thesis_muii.ist }
+% arara: bibtex
+% arara: pdflatex: {shell: yes}
+% arara: pdflatex: {shell: yes}
+% arara: clean: {files: [thesis_muii.aux, thesis_muii.idx, thesis_muii.ilg, thesis_muii.ind, thesis_muii.bbl, thesis_muii.bcf, thesis_muii.blg, thesis_muii.run.xml, thesis_muii.fdb_latexmk, thesis_muii.fls, thesis_muii.loe, thesis_muii.lof, thesis_muii.lol, thesis_muii.lot, thesis_muii.ltb, thesis_muii.out, thesis_muii.toc, thesis_muii.upa, thesis_muii.upb, thesis_muii.acn, thesis_muii.acr, thesis_muii.alg, thesis_muii.glg, thesis_muii.glo, thesis_muii.gls, thesis_muii.glsdefs, thesis_muii.idx,  thesis_muii.ilg, thesis_muii.xdy, thesis_muii.loa, thesis_muii.gnuploterrors , thesis_muii.mw, thesis_muii.fdb_latexmk ]}
+
+\documentclass[english,epsbased,copyright,final,printable,covers,extendedindex,firstnumbered,tfm,gnuplot,loc,loe,lof,lot]{tfgtfmthesisuam}
+
+\advisor{Alejandro Bellogín Kouki}
+\levelin{Computer Science and Engineering}
+\title{A Hybrid Conversational Recommender System by integrating LLMs}
+\subtitle{Development of a Scalable Platform for Conversational Recommendations}
+\author{Javier Wang Zhou}
+\privateaddress{C\textbackslash\ Francisco Tomás y Valiente Nº 11}
+\copyrightdate{April 28, 2025}
+
+\dedication{To my family \& friends}
+\famouscite{Simplicity is the ultimate sophistication. \\[0.1em] \begin{flushright}Leonardo da Vinci\end{flushright}}
+% \prefacefile{inicio/prefacio}
+\ackfile{muii/prologue/agradecimientos}
+\resumenfile{muii/prologue/resumen}
+\abstractfile{muii/prologue/abstract}
+
+\coverdata
+{
+  Escuela Politécnica Superior \\
+  Universidad Autónoma de Madrid \\
+  C\textbackslash Francisco Tomás y Valiente nº 11
+}
+
+\bibliographyconfig{tfgtfmthesisuam}
+
+\usepackage{hyperref}
+\usepackage{svg}
+\usepackage{paralist}
+\usepackage{multicol}
+\usepackage{multirow}
+
+\setlength{\plitemsep}{0.5em}
+
+\svgpath{{muii/img/}}
+\datadir{muii/data}
+\graphicsdir{muii/img}
+\logosdir{muii/img}
+\codesdir{muii/codes}
+
+\input{acronyms}
+
+\begin{document}
+
+  \chapter{Introduction\label{CAP:INTRODUCTION}}{muii/1_introduction/introduction}
+    \section{Motivation\label{SEC:MOTIVATION}}{muii/1_introduction/motivation}
+    \section{Objectives\label{SEC:GOALS}}{muii/1_introduction/objectives}
+    \section{Work Structure\label{SEC:WORK_STRUCT}}{muii/1_introduction/work_structure}
+  \chapter{State of the Art\label{CAP:STATE_OF_THE_ART}}{muii/2_state_of_the_art/state_of_the_art}
+    % Very high level, mention rag, function calling, but explain more in detail in MUI2ICSI referencing
+    \section{Large Language Models\label{SEC:LLM}}{muii/2_state_of_the_art/llm/llm}
+      \subsection{LLM Frameworks\label{SS:LLMFRAMEWORKS}}{muii/2_state_of_the_art/llm/frameworks}
+      % Reference CRS in MUI2ICSI for detailed SOTA
+      \subsection{LLMs in Recommendation\label{SEC:LMREC}}{muii/2_state_of_the_art/llm/lmrec}
+
+    % Very high level, reference MUI2ICSI
+    \section{Recommender Systems\label{SEC:RECSYS}}{muii/2_state_of_the_art/recsys/recsys}
+
+    % Applied to LLMs
+    \section{Data Management \& Scalability\label{SEC:DATA_SCALA}}{muii/2_state_of_the_art/data_scala/data_scala}
+      \subsection{Data Preprocessing\label{SS:DATAPREPROC}}{muii/2_state_of_the_art/data_scala/data_preprocessing}
+      \subsection{Document Chunking\label{SS:CHUNKING}}{muii/2_state_of_the_art/data_scala/doc_chunking}
+      \subsection{Vector Databases\label{SS:VECTORSTORE}}{muii/2_state_of_the_art/data_scala/vector_db}
+      % FalkorDB used in this project
+      \subsection{Graph Databases\label{SS:GRAPHDB}}{muii/2_state_of_the_art/data_scala/graph_db}
+
+    \section{Web Application Frameworks\label{SEC:WEBAPP_FRAMEWORKS}}{muii/2_state_of_the_art/webapp_frameworks/webapp_frameworks}
+      \subsection{Next.js\label{SS:NEXTJS}}{muii/2_state_of_the_art/webapp_frameworks/nextjs}
+      \subsection{FastAPI\label{SS:FASTAPI}}{muii/2_state_of_the_art/webapp_frameworks/fastapi}
+      \subsection{UI/UX in LLM Applications\label{SS:USER_INTERFACE}}{muii/2_state_of_the_art/webapp_frameworks/ui_ux}
+
+  \chapter{System Design\label{CAP:DESIGN}}{muii/3_design/design}
+    \section{Requirements Analysis\label{SEC:REQUIREMENTS}}{muii/3_design/requirements}
+
+    % TODO mention modularization
+    \section{Architecture Overview\label{SEC:ARCH}}{muii/3_design/architecture/architecture}
+      \subsection{Use Case Diagram\label{SS:USECASEDIAG}}{muii/3_design/architecture/use_cases}
+
+    \section{Backend Design\label{SEC:BACKDESIGN}}{muii/3_design/backend/backend}
+      \subsection{Module Definition\label{SS:MODULEDEF}}{muii/3_design/backend/module_definition}
+      \subsection{Sequence Diagrams\label{SS:SEQUENCEDIAG}}{muii/3_design/backend/sequence_diagrams}
+      \subsection{Entity-Relationship Diagram\label{SS:DATABASEDIAG}}{muii/3_design/backend/er_diagram}
+      \subsection{Data Flowchart\label{SS:DATAFLOW}}{muii/3_design/backend/data_flowchart}
+
+    \section{API Design\label{SEC:APIDESIGN}}{muii/3_design/api/api}
+
+    \section{Frontend Design\label{SEC:FRONTDESIGN}}{muii/3_design/frontend/frontend}
+      \subsection{Design Patterns and Principles\label{SS:PATTPRINC}}{muii/3_design/frontend/design_patterns}
+      \subsection{Accessibility\label{SS:ACCESSIBILITY}}{muii/3_design/frontend/accessibility}
+      \subsection{Localization and Internationalization\label{SS:LOCALINTER}}{muii/3_design/frontend/localization}
+
+  % mention MODULARIZATION by CONTAINERIZATION of each system component using DOCKER FOR STREAMLINED DEVELOPMENT, SCALABILITY and PORTABILITY
+  \chapter{Implementation\label{CAP:IMPLEMENTATION}}{muii/4_implementation/implementation}
+    % MUST BE HIGH LEVEL, REFERENCE MUI2ICSI
+    \section{Backend Development\label{SEC:BACKDEV}}{muii/4_implementation/backend/backend}
+      % LlamaIndex (MUST BE HIGH LEVEL, REFERENCE MUI2ICSI)
+      \subsection{LLM Integration\label{SS:LLMINTEG}}{muii/4_implementation/backend/llm_integration}
+      % RecBole
+      \subsection{Recommender System Integration\label{SS:RECSYSINTEG}}{muii/4_implementation/backend/recsys_integration}
+      \subsection{Automated Data Preprocessing\label{SS:AUTODATAPREPROC}}{muii/4_implementation/backend/data_processing}
+
+    % FastAPI (Swagger)
+    \section{API Development\label{SEC:APIDEV}}{muii/4_implementation/api/api}
+      \subsection{Endpoints\label{SS:ENDPOINTS}}{muii/4_implementation/api/endpoints}
+      \subsection{Documentation\label{SS:DOCS}}{muii/4_implementation/api/documentation}
+
+    % Next.js React Framework
+    \section{Frontend Development\label{SEC:FRONTDEV}}{muii/4_implementation/frontend/frontend}
+      \subsection{UI Components\label{SS:UICOMPS}}{muii/4_implementation/frontend/ui_components}
+      % React Context
+      \subsection{State Management\label{SS:STATEMAN}}{muii/4_implementation/frontend/state_management}
+      \subsection{API Integration\label{SS:APIINTEG}}{muii/4_implementation/frontend/api_integration}
+      \subsection{Authentication and Authorization\label{SS:AUTH}}{muii/4_implementation/frontend/authentication}
+
+    \section{Deployment\label{SEC:DEPLOYMENT}}{muii/4_implementation/deployment/deployment}
+      \subsection{Docker Containerization\label{SS:DOCKER}}{muii/4_implementation/deployment/docker}
+      % Vercel OR Render
+      \subsection{Frontend Deployment\label{SS:FRONTDEPLOY}}{muii/4_implementation/deployment/frontend_deployment}
+      % Zrok -> due to limitation on free tiers of cloud hosting services, it was necessary to run locally, using reverse proxy aka tunneling to allow exposure to frontend
+      \subsection{Backend Tunneling\label{SS:BACKTUNNEL}}{muii/4_implementation/deployment/backend_tunneling}
+      % GitHub Actions to run tests, update front deployment || Husky precommit hook for linting,formatting
+      \subsection{CI/CD Pipeline\label{SS:CICD}}{muii/4_implementation/deployment/cicd_pipeline}
+
+  \chapter{Testing and Evaluation\label{CAP:TESTEVAL}}{muii/5_testing_eval/testing_eval}
+    \section{Testing Environment\label{SEC:TESTENV}}{muii/5_testing_eval/testing_env}    
+    
+    \section{Unit Testing\label{SEC:UNITTEST}}{muii/5_testing_eval/unit_testing/unit_testing}
+      \subsection{Backend\label{SS:BACKUNITTEST}}{muii/5_testing_eval/unit_testing/backend}
+      \subsection{API\label{SS:APIUNITTEST}}{muii/5_testing_eval/unit_testing/api}
+      \subsection{Frontend\label{SS:FRONTUNITTEST}}{muii/5_testing_eval/unit_testing/frontend}
+    
+    \section{Performance Testing\label{SEC:PERFORMANCETEST}}{muii/5_testing_eval/perf_testing/perf_testing}
+      \subsection{API Load Testing\label{SS:APILAT}}{muii/5_testing_eval/perf_testing/api_load}
+      \subsection{LLM Inference Testing\label{SS:LLMLAT}}{muii/5_testing_eval/perf_testing/llm_inference}
+    
+    % HIGH LEVEL, ONLY RESULTS SUMMARY, REFERENCE MUI2ICSI
+    \section{Usability Testing\label{SEC:USABILITYTEST}}{muii/5_testing_eval/usability_testing/usability_testing}
+    
+    \section{Comparative Analysis\label{SEC:COMPANALYSIS}}{muii/5_testing_eval/comp_analysis/comp_analysis}
+
+  \chapter{Conclusions and Future Work\label{CAP:CONCLUSIONS}}
+    \section{Conclusions\label{SEC:CONCLUSIONS}}{muii/6_conclusions/conclusions}
+
+    \section{Future Work\label{SEC:FUTUREWORK}}{muii/6_conclusions/futurework}
+
+  \appendix
+  % \chapter{Web Application\label{AP:WEBAPP}}{muii/appendix/webapp}
+  % \chapter{External Libraries\label{AP:EXTLIB}}{muii/appendix/extlib}
+  % \chapter{Data Preprocessing\label{AP:DATAPROC}}{muii/appendix/dataproc}
+  % \chapter{Model Implementations\label{AP:MODELS}}{muii/appendix/models}
+
+\end{document}
