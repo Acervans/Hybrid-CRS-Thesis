@@ -5,4 +5,7 @@ All performance, unit and integration tests were conducted on a single machine w
     \item \textbf{\acs{gpu}:} NVIDIA® GeForce® RTX 3050 Laptop \acs{gpu} with 4GB VRAM
 \end{compactitem}
 
-The software environment was managed entirely through Docker Compose. For the duration of the performance tests, the FastAPI backend was configured to run with 4 Uvicorn workers to make better use of the available \acs{cpu} cores. It's important to note that for production use, the backend is limited to a single worker due to the in-memory dictionary used to manage active conversational workflows. The testing environment also included the containerized Ollama and FalkorDB services.
+The software environment was managed entirely through Docker Compose. For the duration of the performance tests, the FastAPI backend was configured to run with 4 Uvicorn workers to make better use of the available \acs{cpu} cores. 
+It's \textcolor{red}{you should not use abbreviations as they are not formal}
+important to note that for production use, the backend is limited to a single worker due to the in-memory dictionary used to manage active conversational workflows. The testing environment also included the containerized Ollama and FalkorDB services.
+
