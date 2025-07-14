@@ -1,186 +1,335 @@
 @book{BOOK:RS-HANDBOOK,
   place     = {New York, NY},
-  title     = {Recommender Systems Handbook},
+  title     = {{Recommender Systems Handbook}},
   publisher = {Springer},
   author    = {Ricci, Francesco and Rokach, Lior and Shapira, Bracha and Kantor, Paul B.},
   year      = {2022},
   isbn      = {978-1-0716-2197-4}
 }
 
-@inbook{CHAPTER:RS-HANDBOOK-GENERAL,
-  title    = {Advances in Collaborative Filtering},
-  author   = {Koren, Yehuda and Rendle, Steffen and Bell, Robert},
-  pages    = {91--142},
+# SECTION 3. Conversational Preference Elicitation (pages 463--471)
+# SECTION 4. Generating Textual Explanations (pages 471--479)
+@inbook{CHAPTER:RS-HANDBOOK-NLP,
+  title    = {{Natural Language Processing for Recommender Systems}},
+  author   = {Sar Shalom, Oren and Roitman, Haggai and Kouki, Pigi},
+  pages    = {447--471},
   crossref = {BOOK:RS-HANDBOOK}
 }
 
-@inbook{CHAPTER:RS-HANDBOOK-CONTEXT,
-  title    = {Context-Aware Recommender Systems: From Foundations to Recent Developments},
-  author   = {Adomavicius, Gediminas and Bauman, Konstantin and Tuzhilin, Alexander and Unger, Moshe},
-  pages    = {211--250},
-  crossref = {BOOK:RS-HANDBOOK}
+@misc{MUII:SOTA,
+  author = {Javier Wang Zhou},
+  title  = {{A Hybrid Conversational Recommender System by integrating LLMs: Development of a Scalable Platform for Conversational Recommendations}},
+  year   = {2025},
+  note   = {Master's Thesis, Universidad Aut\'{o}noma de Madrid. Forthcoming.}
 }
 
-@inbook{CHAPTER:RS-HANDBOOK-MUSIC,
-  title    = {Music Recommendation Systems: Techniques, Use Cases, and Challenges},
-  author   = {Schedl, Markus and Knees, Peter and McFee, Brian and Bogdanov, Dmitry},
-  pages    = {927--971},
-  crossref = {BOOK:RS-HANDBOOK}
-}
-
-@inbook{CHAPTER:RS-HANDBOOK-KNOWLEDGE,
-  title    = {Semantics and Content-Based Recommendations},
-  author   = {Musto, Cataldo and de Gemmis, Marco and Lops, Pasquale and Narducci, Fedelucio and Semeraro, Giovanni},
-  pages    = {251--298},
-  crossref = {BOOK:RS-HANDBOOK}
-}
-
-@article{SPACY,
-  author = {Honnibal, Matthew and Montani, Ines and Van Landeghem, Sofie and Boyd, Adriane},
-  doi    = {10.5281/zenodo.1212303},
-  title  = {{spaCy: Industrial-strength Natural Language Processing in Python}},
-  year   = {2020}
-}
-
-@book{NLTK,
-  title     = {Natural language processing with {P}ython: analyzing text with the natural language toolkit},
-  author    = {Bird, Steven and Klein, Ewan and Loper, Edward},
-  year      = {2009},
-  publisher = {\uppercase{O}'Reilly Media, Inc.}
-}
-
-@book{VAD-MODEL,
-	title = {Basic Dimensions for a General Psychological Theory: Implications for Personality, Social, Environmental, and Developmental Studies},
-	year = {1980},
-	author = {Albert Mehrabian},
-	publisher = {Cambridge: Oelgeschlager, Gunn \& Hain},
-	editor = {}
-}
-
-@online{WIKI:VA-MODEL,
-  author  = {{Wikimedia Commons}},
-  title   = {\href{https://commons.wikimedia.org/wiki/File:Circumplex_model_of_emotion.svg}{Circumplex model of emotion}},
-  year    = {2023},
-  urlseen = {29-06-23},
-  url     = {https://commons.wikimedia.org/wiki/File:Circumplex_model_of_emotion.svg}
-}
-
-@online{WIKI:PAD-MODEL,
-  author  = {{Wikimedia Commons}},
-  title   = {\href{https://commons.wikimedia.org/wiki/File:PAD_emotional_state_model_Page_1.png}{PAD emotional state model}},
-  year    = {2023},
-  urlseen = {29-06-23},
-  url     = {https://commons.wikimedia.org/wiki/File:PAD_emotional_state_model_Page_1.png}
-}
-
-@article{EMOTION-MODELS,
-  author    = {Rubin, David T. and Talarico, Jennifer M.},
-  journal   = {Memory},
-  month     = {11},
-  number    = {8},
-  pages     = {802--808},
-  publisher = {Taylor & Francis},
-  title     = {A comparison of dimensional models of emotion: Evidence from emotions, prototypical events, autobiographical memories, and words},
-  volume    = {17},
-  year      = {2009},
-  doi       = {10.1080/09658210903130764},
-  url       = {https://doi.org/10.1080/09658210903130764}
-}
-
-@article{STSC,
-  author  = {Wu, Songhao},
-  month   = {5},
-  journal = {Towards Data Science},
-  title   = {{\href{https://towardsdatascience.com/design-your-own-sentiment-score-e524308cf787}{Design your own Sentiment Score}}},
-  year    = {2021},
-  url     = {https://towardsdatascience.com/design-your-own-sentiment-score-e524308cf787}
-}
-
-@misc{WORD2VEC,
-  title         = {Efficient Estimation of Word Representations in Vector Space},
-  author        = {Tomas Mikolov and Kai Chen and Greg Corrado and Jeffrey Dean},
-  year          = {2013},
-  eprint        = {1301.3781},
+@misc{SOTA-REVIEW-GEN-RECSYS,
+  title         = {A Review of Modern Recommender Systems Using Generative Models (Gen-RecSys)},
+  author        = {Yashar Deldjoo and Zhankui He and Julian McAuley and Anton Korikov and Scott Sanner and Arnau Ramisa and René Vidal and Maheswaran Sathiamoorthy and Atoosa Kasirzadeh and Silvia Milano},
+  year          = {2024},
+  eprint        = {2404.00579},
   archiveprefix = {arXiv},
-  primaryclass  = {cs.CL}
+  primaryclass  = {cs.IR},
+  url           = {https://arxiv.org/abs/2404.00579}
 }
 
-@inproceedings{GLOVE,
-  title     = {{G}lo{V}e: Global Vectors for Word Representation},
-  author    = {Pennington, Jeffrey  and
-               Socher, Richard  and
-               Manning, Christopher},
-  booktitle = {Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing ({EMNLP})},
-  month     = oct,
-  year      = {2014},
-  address   = {Doha, Qatar},
-  publisher = {Association for Computational Linguistics},
-  url       = {https://aclanthology.org/D14-1162},
-  doi       = {10.3115/v1/D14-1162},
-  pages     = {1532--1543}
+@article{SOTA-CRS,
+  title   = {Conversational recommender systems techniques, tools, acceptance, and adoption: A state of the art review},
+  journal = {Expert Systems with Applications},
+  volume  = {203},
+  pages   = {117539},
+  year    = {2022},
+  issn    = {0957-4174},
+  doi     = {https://doi.org/10.1016/j.eswa.2022.117539},
+  author  = {Dhanya Pramod and Prafulla Bafna}
 }
 
-@inproceedings{BOOK:NRC,
-  title     = {Obtaining Reliable Human Ratings of Valence, Arousal, and Dominance for 20,000 English Words},
-  author    = {Mohammad, Saif M.},
-  booktitle = {Proceedings of The Annual Conference of the Association for Computational Linguistics (ACL)},
-  year      = {2018},
-  address   = {Melbourne, Australia}
+@article{SOTA-CRS-LLM,
+  title     = {{Recommender Systems in the Era of Large Language Models (LLMs)}},
+  volume    = {36},
+  issn      = {2326-3865},
+  url       = {http://dx.doi.org/10.1109/TKDE.2024.3392335},
+  doi       = {10.1109/tkde.2024.3392335},
+  number    = {11},
+  journal   = {IEEE Transactions on Knowledge and Data Engineering},
+  publisher = {Institute of Electrical and Electronics Engineers (IEEE)},
+  author    = {Zhao, Zihuai and Fan, Wenqi and Li, Jiatong and Liu, Yunqing and Mei, Xiaowei and Wang, Yiqi and Wen, Zhen and Wang, Fei and Zhao, Xiangyu and Tang, Jiliang and Li, Qing},
+  year      = {2024},
+  month     = nov,
+  pages     = {6889–6907}
 }
 
-
-@article{DJANGO-POP,
-  author  = {Ihtsham, Ali},
-  journal = {www.linkedin.com},
-  month   = {3},
-  title   = {{The Top Web Development Frameworks of 2023}},
-  year    = {2023},
-  url     = {https://www.linkedin.com/pulse/top-web-development-frameworks-2023-ali-ihtsham}
+@misc{SOTA-LLM-CF,
+  title         = {{Large Language Models meet Collaborative Filtering: An Efficient All-round LLM-based Recommender System}},
+  author        = {Sein Kim and Hongseok Kang and Seungyoon Choi and Donghyun Kim and Minchul Yang and Chanyoung Park},
+  year          = {2024},
+  eprint        = {2404.11343},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.IR},
+  url           = {https://arxiv.org/abs/2404.11343}
 }
 
-@software{DJANGO,
-  author  = {{Django Software Foundation}},
-  title   = {Django},
-  url     = {https://djangoproject.com},
-  version = {2.2},
-  date    = {2019-05-05}
-} 
-
-@incollection{SQLALCHEMY,
-  place     = {Mountain View},
-  title     = {{SQLAlchemy}},
-  booktitle = {The Architecture of Open Source Applications Volume II: Structure, Scale, and a Few More Fearless Hacks},
-  publisher = {aosabook.org},
-  url       = {http://aosabook.org/en/sqlalchemy.html},
-  author    = {Bayer, Michael},
-  editor    = {Brown, Amy and Wilson, Greg},
-  year      = {2012}
-} 
-
-@inproceedings{VADER,
-  author  = {Hutto, C.J. and Gilbert, Eric},
-  year    = {2015},
-  month   = {01},
-  title   = {{VADER}: A Parsimonious Rule-based Model for Sentiment Analysis of Social Media Text},
-  journal = {Proceedings of the 8th International Conference on Weblogs and Social Media, ICWSM 2014}
+@misc{SOTA-LLM-ITEMS,
+  title         = {{Bridging Items and Language: A Transition Paradigm for Large Language Model-Based Recommendation}},
+  author        = {Xinyu Lin and Wenjie Wang and Yongqi Li and Fuli Feng and See-Kiong Ng and Tat-Seng Chua},
+  year          = {2024},
+  eprint        = {2310.06491},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.IR},
+  url           = {https://arxiv.org/abs/2310.06491}
 }
 
-@misc{SENTIMENTANALYSIS,
-  author       = {Doris Zhou},
-  title        = {{SentimentAnalysis}},
-  year         = {2017},
-  publisher    = {GitHub},
-  journal      = {GitHub repository},
-  howpublished = {\url{https://github.com/dwzhou/SentimentAnalysis}}
+@inproceedings{SOTA-PREFERENCE-ELICITATION,
+  author    = {Priyogi, Bilih},
+  title     = {{Preference Elicitation Strategy for Conversational Recommender System}},
+  year      = {2019},
+  isbn      = {9781450359405},
+  publisher = {Association for Computing Machinery},
+  url       = {https://doi.org/10.1145/3289600.3291604},
+  doi       = {10.1145/3289600.3291604},
+  booktitle = {Proceedings of the Twelfth ACM International Conference on Web Search and Data Mining},
+  pages     = {824–825}
 }
 
-@misc{PYLAST,
-  author       = {Amr Hassan and Contributors},
-  title        = {pylast},
-  year         = {2009},
-  publisher    = {GitHub},
-  journal      = {GitHub repository},
-  howpublished = {\url{https://github.com/pylast/pylast}}
+@inproceedings{SOTA-MODEL-AGNOSTIC-GRAPH-EXPLANATIONS,
+  author    = {Chen, Yuhao
+               and Miyazaki, Jun},
+  editor    = {Hartmann, Sven
+               and K{\"u}ng, Josef
+               and Kotsis, Gabriele
+               and Tjoa, A. Min
+               and Khalil, Ismail},
+  title     = {{A Model-Agnostic Recommendation Explanation System Based on Knowledge Graph}},
+  booktitle = {Database and Expert Systems Applications},
+  year      = {2020},
+  publisher = {Springer International Publishing},
+  pages     = {149--163},
+  isbn      = {978-3-030-59051-2}
+}
+
+@article{SOTA-PREFERENCE-ELICITATION-UX,
+  title   = {The effect of preference elicitation methods on the user experience in conversational recommender systems},
+  journal = {Computer Speech & Language},
+  volume  = {89},
+  pages   = {101696},
+  year    = {2025},
+  issn    = {0885-2308},
+  doi     = {https://doi.org/10.1016/j.csl.2024.101696},
+  author  = {Liv Ziegfeld and Daan Di Scala and Anita H.M. Cremers}
+}
+
+@inproceedings{SOTA-LLM-REC-EXPLAIN,
+  series     = {KDD '24},
+  title      = {{RecExplainer: Aligning Large Language Models for Explaining Recommendation Models}},
+  url        = {http://dx.doi.org/10.1145/3637528.3671802},
+  doi        = {10.1145/3637528.3671802},
+  booktitle  = {Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining},
+  publisher  = {ACM},
+  author     = {Lei, Yuxuan and Lian, Jianxun and Yao, Jing and Huang, Xu and Lian, Defu and Xie, Xing},
+  year       = {2024},
+  month      = aug,
+  pages      = {1530–1541},
+  collection = {KDD ’24}
+}
+
+@inproceedings{SOTA-RECSYS-EXPLAIN,
+  author    = {Vultureanu-Albişi, Andreea and Costin Bădică},
+  title     = {{Recommender Systems: An Explainable AI Perspective}},
+  booktitle = {2021 International Conference on Innovations in Intelligent Systems and Applications (INISTA)},
+  year      = {2021},
+  publisher = {IEEE},
+  doi       = {10.1109/INISTA52262.2021.9548125}
+}
+
+@inproceedings{SOTA-RECSYS-EXPLAIN-KG,
+  author    = {Balloccu, Giacomo
+               and Boratto, Ludovico
+               and Fenu, Gianni
+               and Malloci, Francesca Maridina
+               and Marras, Mirko},
+  editor    = {Goharian, Nazli
+               and Tonellotto, Nicola
+               and He, Yulan
+               and Lipani, Aldo
+               and McDonald, Graham
+               and Macdonald, Craig
+               and Ounis, Iadh},
+  title     = {{Explainable Recommender Systems with Knowledge Graphs and Language Models}},
+  booktitle = {Advances in Information Retrieval},
+  year      = {2024},
+  publisher = {Springer Nature Switzerland},
+  pages     = {352--357},
+  isbn      = {978-3-031-56069-9}
+}
+
+@inproceedings{SOTA-CRS-EXPLAIN,
+  author    = {Silva, Fillipe dos Santos},
+  title     = {{Segment, Recommend, and Explain: Advancing Conversational Recommender Systems with Large Language Model Agents}},
+  year      = {2025},
+  isbn      = {9798400713132},
+  publisher = {Association for Computing Machinery},
+  url       = {https://doi.org/10.1145/3699682.3727569},
+  doi       = {10.1145/3699682.3727569},
+  booktitle = {Proceedings of the 33rd ACM Conference on User Modeling, Adaptation and Personalization},
+  pages     = {404–408},
+  series    = {UMAP '25}
+}
+
+@inproceedings{SOTA-EXPLAIN-CRS,
+  author    = {Guo, Shuyu and Zhang, Shuo and Sun, Weiwei and Ren, Pengjie and Chen, Zhumin and Ren, Zhaochun},
+  title     = {{Towards Explainable Conversational Recommender Systems}},
+  year      = {2023},
+  isbn      = {9781450394086},
+  publisher = {Association for Computing Machinery},
+  url       = {https://doi.org/10.1145/3539618.3591884},
+  doi       = {10.1145/3539618.3591884},
+  booktitle = {Proceedings of the 46th International ACM SIGIR Conference on Research and Development in Information Retrieval},
+  pages     = {2786–2795},
+  series    = {SIGIR '23}
+}
+
+@misc{SOTA-CONTEXT-AWARE-EXP-KG,
+  title         = {Context-aware explainable recommendations over knowledge graphs},
+  author        = {Jinfeng Zhong and Elsa Negre},
+  year          = {2023},
+  eprint        = {2310.16141},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.IR},
+  url           = {https://arxiv.org/abs/2310.16141}
+}
+
+@misc{SOTA-GRAPH-REASONING-COLD-START,
+  title         = {{Graph Reasoning for Explainable Cold Start Recommendation}},
+  author        = {Jibril Frej and Marta Knezevic and Tanja Kaser},
+  year          = {2024},
+  eprint        = {2406.07420},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.IR},
+  url           = {https://arxiv.org/abs/2406.07420}
+}
+
+@inproceedings{SOTA-TRANSFORMERS,
+  author    = {Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N and Kaiser, \L ukasz and Polosukhin, Illia},
+  booktitle = {Advances in Neural Information Processing Systems},
+  editor    = {I. Guyon and U. Von Luxburg and S. Bengio and H. Wallach and R. Fergus and S. Vishwanathan and R. Garnett},
+  pages     = {},
+  publisher = {Curran Associates, Inc.},
+  title     = {{Attention is All you Need}},
+  url       = {https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf},
+  volume    = {30},
+  year      = {2017}
+}
+
+@misc{SOTA-RAG-SURVEY,
+  title         = {{Retrieval-Augmented Generation for Large Language Models: A Survey}},
+  author        = {Yunfan Gao and Yun Xiong and Xinyu Gao and Kangxiang Jia and Jinliu Pan and Yuxi Bi and Yi Dai and Jiawei Sun and Meng Wang and Haofen Wang},
+  year          = {2024},
+  eprint        = {2312.10997},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2312.10997}
+}
+
+@misc{SOTA-HYBRIDRAG,
+  title         = {{HybridRAG: Integrating Knowledge Graphs and Vector Retrieval Augmented Generation for Efficient Information Extraction}},
+  author        = {Bhaskarjit Sarmah and Benika Hall and Rohan Rao and Sunil Patel and Stefano Pasquali and Dhagash Mehta},
+  year          = {2024},
+  eprint        = {2408.04948},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2408.04948}
+}
+
+@misc{SOTA-ADVANCED-RAG,
+  author = {Karzhev, Stanislav},
+  month  = {9},
+  title  = {{Advanced RAG Techniques}},
+  year   = {2024},
+  url    = {https://www.datacamp.com/blog/rag-advanced}
+}
+
+@misc{SOTA-LLM-CRS,
+  title         = {{Leveraging Large Language Models in Conversational Recommender Systems}},
+  author        = {Luke Friedman and Sameer Ahuja and David Allen and Zhenning Tan and Hakim Sidahmed and Changbo Long and Jun Xie and Gabriel Schubiner and Ajay Patel and Harsh Lara and Brian Chu and Zexi Chen and Manoj Tiwari},
+  year          = {2023},
+  eprint        = {2305.07961},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.IR},
+  url           = {https://arxiv.org/abs/2305.07961}
+}
+
+@misc{SOTA-GPT4REC,
+  title         = {{GPT4Rec: A Generative Framework for Personalized Recommendation and User Interests Interpretation}},
+  author        = {Jinming Li and Wentao Zhang and Tian Wang and Guanglei Xiong and Alan Lu and Gerard Medioni},
+  year          = {2023},
+  eprint        = {2304.03879},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.IR},
+  url           = {https://arxiv.org/abs/2304.03879}
+}
+
+@inproceedings{EASER,
+  series     = {WWW ’19},
+  title      = {{Embarrassingly Shallow Autoencoders for Sparse Data}},
+  url        = {http://dx.doi.org/10.1145/3308558.3313710},
+  doi        = {10.1145/3308558.3313710},
+  booktitle  = {The World Wide Web Conference},
+  publisher  = {ACM},
+  author     = {Steck, Harald},
+  year       = {2019},
+  month      = may,
+  pages      = {3251–3257},
+  collection = {WWW ’19}
+}
+
+@misc{COLD-START-INCREMENTAL-FM,
+  title         = {{Incremental Factorization Machines for Persistently Cold-starting Online Item Recommendation}},
+  author        = {Takuya Kitazawa},
+  year          = {2016},
+  eprint        = {1607.02858},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.LG},
+  url           = {https://arxiv.org/abs/1607.02858}
+}
+
+@article{COLD-START-DYN-EASER,
+  author  = {Olivier Jeunen and Jan Van Balen and Bart Goethals},
+  title   = {Embarrassingly shallow auto-encoders for dynamic collaborative filtering},
+  journal = {User Modeling and User-Adapted Interaction},
+  volume  = {32},
+  number  = {4},
+  pages   = {509--541},
+  year    = {2022},
+  month   = {September},
+  doi     = {10.1007/s11257-021-09314-7}
+}
+
+@article{QWEN,
+  title   = {{Qwen Technical Report}},
+  author  = {Jinze Bai and Shuai Bai and Yunfei Chu and Zeyu Cui and Kai Dang and Xiaodong Deng and Yang Fan and Wenbin Ge and Yu Han and Fei Huang and Binyuan Hui and Luo Ji and Mei Li and Junyang Lin and Runji Lin and Dayiheng Liu and Gao Liu and Chengqiang Lu and Keming Lu and Jianxin Ma and Rui Men and Xingzhang Ren and Xuancheng Ren and Chuanqi Tan and Sinan Tan and Jianhong Tu and Peng Wang and Shijie Wang and Wei Wang and Shengguang Wu and Benfeng Xu and Jin Xu and An Yang and Hao Yang and Jian Yang and Shusheng Yang and Yang Yao and Bowen Yu and Hongyi Yuan and Zheng Yuan and Jianwei Zhang and Xingxuan Zhang and Yichang Zhang and Zhenru Zhang and Chang Zhou and Jingren Zhou and Xiaohuan Zhou and Tianhang Zhu},
+  journal = {arXiv preprint arXiv:2309.16609},
+  year    = {2023}
+}
+
+@misc{CRSLAB,
+  title         = {{CRSLab}: An Open-Source Toolkit for Building Conversational Recommender System},
+  author        = {Kun Zhou and Xiaolei Wang and Yuanhang Zhou and Chenzhan Shang and Yuan Cheng and Wayne Xin Zhao and Yaliang Li and Ji-Rong Wen},
+  year          = {2021},
+  eprint        = {2101.00939},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2101.00939}
+}
+
+@software{LLAMAINDEX,
+  author       = {Liu, Jerry},
+  doi          = {10.5281/zenodo.1234},
+  month        = {11},
+  title        = {{LlamaIndex}},
+  url          = {https://github.com/jerryjliu/llama_index},
+  howpublished = {\url{https://github.com/jerryjliu/llama_index}},
+  url          = {https://github.com/jerryjliu/llama_index},
+  year         = {2022}
 }
 
 @misc{RECBOLE,
@@ -192,83 +341,19 @@
   primaryclass  = {cs.IR}
 }
 
-@misc{WIKIPEDIA,
-  author       = {Jonathan Goldsmith and {Wikimedia Foundation}},
-  title        = {Wikipedia},
-  year         = {2013},
-  publisher    = {GitHub},
-  journal      = {GitHub repository},
-  howpublished = {\url{https://github.com/goldsmith/Wikipedia}}
-}
-
-@misc{BIGER,
-  author       = {Philipp-Lorenz Glaser and Georg Hammerschmied and Hnatiuk Vladyslav and Christoph Lauscher and Dominik Bork},
-  title        = {{bigER}},
-  year         = {2021},
-  publisher    = {GitHub},
-  journal      = {GitHub repository},
-  howpublished = {\url{https://github.com/borkdominik/bigER}}
-}
-
-@article{SEABORN,
-  doi       = {10.21105/joss.03021},
-  url       = {https://doi.org/10.21105/joss.03021},
-  year      = {2021},
-  publisher = {The Open Journal},
-  volume    = {6},
-  number    = {60},
-  pages     = {3021},
-  author    = {Michael L. Waskom},
-  title     = {seaborn: statistical data visualization},
-  journal   = {Journal of Open Source Software}
-}
-
-@article{NUMPY,
-  title     = {Array programming with {NumPy}},
-  author    = {Charles R. Harris and K. Jarrod Millman and St{\'{e}}fan J.
-               van der Walt and Ralf Gommers and Pauli Virtanen and David
-               Cournapeau and Eric Wieser and Julian Taylor and Sebastian
-               Berg and Nathaniel J. Smith and Robert Kern and Matti Picus
-               and Stephan Hoyer and Marten H. van Kerkwijk and Matthew
-               Brett and Allan Haldane and Jaime Fern{\'{a}}ndez del
-               R{\'{i}}o and Mark Wiebe and Pearu Peterson and Pierre
-               G{\'{e}}rard-Marchant and Kevin Sheppard and Tyler Reddy and
-               Warren Weckesser and Hameer Abbasi and Christoph Gohlke and
-               Travis E. Oliphant},
-  year      = {2020},
-  month     = sep,
-  journal   = {Nature},
-  volume    = {585},
-  number    = {7825},
-  pages     = {357--362},
-  doi       = {10.1038/s41586-020-2649-2},
-  publisher = {Springer Science and Business Media {LLC}},
-  url       = {https://doi.org/10.1038/s41586-020-2649-2}
-}
-
-@inproceedings{PANDAS,
-  title        = {Data structures for statistical computing in {P}ython},
-  author       = {McKinney, Wes and others},
-  booktitle    = {Proceedings of the 9th Python in Science Conference},
-  volume       = {445},
-  pages        = {51--56},
-  year         = {2010},
-  organization = {Austin, TX}
-} 
-
-@article{MATPLOTLIB,
-  author    = {Hunter, J. D.},
-  title     = {Matplotlib: A 2{D} graphics environment},
-  journal   = {Computing in Science \& Engineering},
-  volume    = {9},
-  number    = {3},
-  pages     = {90--95},
-  abstract  = {Matplotlib is a 2D graphics package used for Python for
-               application development, interactive scripting, and publication-quality
-               image generation across user interfaces and operating systems.},
-  publisher = {IEEE COMPUTER SOC},
-  doi       = {10.1109/MCSE.2007.55},
-  year      = 2007
+@article{CORNAC,
+  author     = {Salah, Aghiles and Truong, Quoc-Tuan and Lauw, Hady W.},
+  title      = {Cornac: a comparative framework for multimodal recommender systems},
+  year       = {2020},
+  issue_date = {January 2020},
+  publisher  = {JMLR.org},
+  volume     = {21},
+  number     = {1},
+  issn       = {1532-4435},
+  journal    = {J. Mach. Learn. Res.},
+  month      = jan,
+  articleno  = {95},
+  numpages   = {5}
 }
 
 @conference{JUPYTER,
@@ -281,37 +366,13 @@
   year         = {2016}
 } 
 
-@article{SURPRISE,
-  doi       = {10.21105/joss.02174},
-  url       = {https://doi.org/10.21105/joss.02174},
-  year      = {2020},
-  publisher = {The Open Journal},
-  volume    = {5},
-  number    = {52},
-  pages     = {2174},
-  author    = {Nicolas Hug},
-  title     = {Surprise: A {P}ython library for recommender systems},
-  journal   = {Journal of Open Source Software}
-}
-
-@article{CORNAC,
-  title   = {Cornac: A Comparative Framework for Multimodal Recommender Systems},
-  author  = {Salah, Aghiles and Truong, Quoc-Tuan and Lauw, Hady W},
-  journal = {Journal of Machine Learning Research},
-  volume  = {21},
-  number  = {95},
-  pages   = {1--5},
-  year    = {2020}
-}
-
 @incollection{PYTORCH,
   title     = {Py{T}orch: An Imperative Style, High-Performance Deep Learning Library},
   author    = {Paszke, Adam and Gross, Sam and Massa, Francisco and Lerer, Adam and Bradbury, James and Chanan, Gregory and Killeen, Trevor and Lin, Zeming and Gimelshein, Natalia and Antiga, Luca and Desmaison, Alban and Kopf, Andreas and Yang, Edward and DeVito, Zachary and Raison, Martin and Tejani, Alykhan and Chilamkurthy, Sasank and Steiner, Benoit and Fang, Lu and Bai, Junjie and Chintala, Soumith},
   booktitle = {Advances in Neural Information Processing Systems 32},
   pages     = {8024--8035},
   year      = {2019},
-  publisher = {Curran Associates, Inc.},
-  url       = {http://papers.neurips.cc/paper/9015-pytorch-an-imperative-style-high-performance-deep-learning-library.pdf}
+  publisher = {Curran Associates, Inc.}
 } 
 
 @misc{TENSORFLOW,
@@ -362,21 +423,9 @@
   year   = {2015}
 }
 
-@article{SKLEARN,
-  title   = {Scikit-learn: Machine Learning in {P}ython},
-  author  = {Pedregosa, F. and Varoquaux, G. and Gramfort, A. and Michel, V.
-             and Thirion, B. and Grisel, O. and Blondel, M. and Prettenhofer, P.
-             and Weiss, R. and Dubourg, V. and Vanderplas, J. and Passos, A. and
-             Cournapeau, D. and Brucher, M. and Perrot, M. and Duchesnay, E.},
-  journal = {Journal of Machine Learning Research},
-  volume  = {12},
-  pages   = {2825--2830},
-  year    = {2011}
-}
-
 @article{ITEMKNN,
   author     = {Deshpande, Mukund and Karypis, George},
-  title      = {Item-Based Top-N Recommendation Algorithms},
+  title      = {Item-based top-{N} recommendation algorithms},
   year       = {2004},
   issue_date = {January 2004},
   publisher  = {Association for Computing Machinery},
@@ -388,59 +437,88 @@
   doi        = {10.1145/963770.963776},
   abstract   = {The explosive growth of the world-wide-web and the emergence of e-commerce has led to the development of recommender systems---a personalized information filtering technology used to identify a set of items that will be of interest to a certain user. User-based collaborative filtering is the most successful technology for building recommender systems to date and is extensively used in many commercial recommender systems. Unfortunately, the computational complexity of these methods grows linearly with the number of customers, which in typical commercial applications can be several millions. To address these scalability concerns model-based recommendation techniques have been developed. These techniques analyze the user--item matrix to discover relations between the different items and use these relations to compute the list of recommendations.In this article, we present one such class of model-based recommendation algorithms that first determines the similarities between the various items and then uses them to identify the set of items to be recommended. The key steps in this class of algorithms are (i) the method used to compute the similarity between the items, and (ii) the method used to combine these similarities in order to compute the similarity between a basket of items and a candidate recommender item. Our experimental evaluation on eight real datasets shows that these item-based algorithms are up to two orders of magnitude faster than the traditional user-neighborhood based recommender systems and provide recommendations with comparable or better quality.},
   journal    = {ACM Trans. Inf. Syst.},
-  month      = {jan},
+  month      = jan,
   pages      = {143–177},
   numpages   = {35},
-  keywords   = {predicting user behavior, e-commerce, world wide web}
+  keywords   = {world wide web, predicting user behavior, e-commerce}
 }
 
-@inproceedings{XDEEPFM,
-  author    = {Lian, Jianxun and Zhou, Xiaohuan and Zhang, Fuzheng and Chen, Zhongxia and Xie, Xing and Sun, Guangzhong},
-  title     = {{xDeepFM}: Combining Explicit and Implicit Feature Interactions for Recommender Systems},
-  year      = {2018},
-  isbn      = {9781450355520},
-  publisher = {Association for Computing Machinery},
-  address   = {New York, NY, USA},
-  url       = {https://doi.org/10.1145/3219819.3220023},
-  doi       = {10.1145/3219819.3220023},
-  abstract  = {Combinatorial features are essential for the success of many commercial models. Manually crafting these features usually comes with high cost due to the variety, volume and velocity of raw data in web-scale systems. Factorization based models, which measure interactions in terms of vector product, can learn patterns of combinatorial features automatically and generalize to unseen features as well. With the great success of deep neural networks (DNNs) in various fields, recently researchers have proposed several DNN-based factorization model to learn both low- and high-order feature interactions. Despite the powerful ability of learning an arbitrary function from data, plain DNNs generate feature interactions implicitly and at the bit-wise level. In this paper, we propose a novel Compressed Interaction Network (CIN), which aims to generate feature interactions in an explicit fashion and at the vector-wise level. We show that the CIN share some functionalities with convolutional neural networks (CNNs) and recurrent neural networks (RNNs). We further combine a CIN and a classical DNN into one unified model, and named this new model eXtreme Deep Factorization Machine (xDeepFM). On one hand, the xDeepFM is able to learn certain bounded-degree feature interactions explicitly; on the other hand, it can learn arbitrary low- and high-order feature interactions implicitly. We conduct comprehensive experiments on three real-world datasets. Our results demonstrate that xDeepFM outperforms state-of-the-art models. We have released the source code of xDeepFM at https://github.com/Leavingseason/xDeepFM.},
-  booktitle = {Proceedings of the 24th ACM SIGKDD International Conference on Knowledge Discovery \& Data Mining},
-  pages     = {1754–1763},
-  numpages  = {10},
-  keywords  = {feature interactions, neural network, factorization machines, deep learning, recommender systems},
-  location  = {London, United Kingdom},
-  series    = {KDD '18}
+@inproceedings{TOWARDS-EXP-CRS,
+  author    = {Lei, Wenqiang and He, Xiangnan and de Rijke, Maarten and Chua, Tat-Seng},
+  title     = {{Towards Explainable Conversational Recommendation}},
+  booktitle = {Proceedings of the 29th International Joint Conference on Artificial Intelligence (IJCAI)},
+  year      = {2020},
+  pages     = {3448--3454}
 }
 
-@inproceedings{DCNV2,
-  author    = {Wang, Ruoxi and Shivanna, Rakesh and Cheng, Derek and Jain, Sagar and Lin, Dong and Hong, Lichan and Chi, Ed},
-  title     = {{DCN V2}: Improved Deep \& Cross Network and Practical Lessons for Web-Scale Learning to Rank Systems},
-  year      = {2021},
-  isbn      = {9781450383127},
-  publisher = {Association for Computing Machinery},
-  address   = {New York, NY, USA},
-  url       = {https://doi.org/10.1145/3442381.3450078},
-  doi       = {10.1145/3442381.3450078},
-  abstract  = {Learning effective feature crosses is the key behind building recommender systems. However, the sparse and large feature space requires exhaustive search to identify effective crosses. Deep \& Cross Network (DCN) was proposed to automatically and efficiently learn bounded-degree predictive feature interactions. Unfortunately, in models that serve web-scale traffic with billions of training examples, DCN showed limited expressiveness in its cross network at learning more predictive feature interactions. Despite significant research progress made, many deep learning models in production still rely on traditional feed-forward neural networks to learn feature crosses inefficiently. In light of the pros/cons of DCN and existing feature interaction learning approaches, we propose an improved framework DCN-V2 to make DCN more practical in large-scale industrial settings. In a comprehensive experimental study with extensive hyper-parameter search and model tuning, we observed that DCN-V2 approaches outperform all the state-of-the-art algorithms on popular benchmark datasets. The improved DCN-V2 is more expressive yet remains cost efficient at feature interaction learning, especially when coupled with a mixture of low-rank architecture. DCN-V2 is simple, can be easily adopted as building blocks, and has delivered significant offline accuracy and online business metrics gains across many web-scale learning to rank systems at Google. Our code and tutorial are open-sourced as part of TensorFlow Recommenders (TFRS)1.},
-  booktitle = {Proceedings of the Web Conference 2021},
-  pages     = {1785–1797},
-  numpages  = {13},
-  keywords  = {Feature Crossing, CTR Prediction, Neural Networks, Deep Learning},
-  location  = {Ljubljana, Slovenia},
-  series    = {WWW '21}
+@inproceedings{SURVEY-HOLISTIC-RECSYS,
+  author    = {Li, Chuang and Hu, Hengchang and Zhang, Yan and Kan, Min-Yen and Li, Haizhou},
+  title     = {{A Conversation is Worth A Thousand Recommendations: A Survey of Holistic Conversational Recommender Systems}},
+  booktitle = {Proceedings of the Fifth Knowledge-aware and Conversational Recommender Systems (KaRS) Workshop},
+  year      = {2023}
 }
 
-@inproceedings{PNN,
-  author    = {Qu, Yanru and Cai, Han and Ren, Kan and Zhang, Weinan and Yu, Yong and Wen, Ying and Wang, Jun},
-  booktitle = {2016 IEEE 16th International Conference on Data Mining (ICDM)},
-  title     = {Product-Based {N}eural {N}etworks for User Response Prediction},
-  year      = {2016},
-  volume    = {},
-  number    = {},
-  pages     = {1149-1154},
-  abstract  = {Predicting user responses, such as clicks and conversions, is of great importance and has found its usage inmany Web applications including recommender systems, websearch and online advertising. The data in those applicationsis mostly categorical and contains multiple fields, a typicalrepresentation is to transform it into a high-dimensional sparsebinary feature representation via one-hot encoding. Facing withthe extreme sparsity, traditional models may limit their capacityof mining shallow patterns from the data, i.e. low-order featurecombinations. Deep models like deep neural networks, on theother hand, cannot be directly applied for the high-dimensionalinput because of the huge feature space. In this paper, we proposea Product-based Neural Networks (PNN) with an embeddinglayer to learn a distributed representation of the categorical data, a product layer to capture interactive patterns between interfieldcategories, and further fully connected layers to explorehigh-order feature interactions. Our experimental results on twolarge-scale real-world ad click datasets demonstrate that PNNsconsistently outperform the state-of-the-art models on various metrics.},
-  keywords  = {},
-  doi       = {10.1109/ICDM.2016.0151},
-  issn      = {2374-8486},
-  month     = {Dec}
+@misc{G-REFER,
+  author        = {Li, Yuhan and He, Keji and Wang, Zhipeng and Li, Yutong and Li, Jia and Nie, Jian-Yun and Wen, Ji-Rong},
+  title         = {{G-Refer: Graph Retrieval-Augmented Large Language Model for Explainable Recommendation}},
+  year          = {2025},
+  eprint        = {2502.12586},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.IR}
+}
+
+@misc{GRAPHRAG-CRS,
+  author        = {Qiu, Zhangchi and Luo, Linhao and Zhao, Zicheng and Pan, Shirui and Liew, Alan Wee-Chung},
+  title         = {{Graph Retrieval-Augmented LLM for Conversational Recommendation Systems}},
+  year          = {2025},
+  eprint        = {2503.06430},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.CL}
+}
+
+@inproceedings{RECINDIAL,
+  author    = {Wang, Lingzhi and Hu, Huang and Sha, Lei and Xu, Can and Jiang, Daxin and Wong, Kam-Fai},
+  title     = {{RecInDial: A Unified Framework for Conversational Recommendation with Pretrained Language Models}},
+  booktitle = {Proceedings of the 2nd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics and the 12th International Joint Conference on Natural Language Processing},
+  year      = {2022},
+  pages     = {489--500}
+}
+
+@misc{ADAPTIVE-RAG,
+  author        = {Wang, Xi and Sen, Procheta and Li, Ruizhe and Yilmaz, Emine},
+  title         = {{Adaptive Retrieval-Augmented Generation for Conversational Systems}},
+  year          = {2024},
+  eprint        = {2407.21712},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.CL}
+}
+
+@misc{COLLAB-LLM-CRS,
+  author        = {Zhu, Yaochen and Wan, Chao and Steck, Harald and Liang, Dawen and Feng, Yesu and Kallus, Nathan and Li, Jundong},
+  title         = {{Collaborative Retrieval for Large Language Model-based Conversational Recommender Systems}},
+  year          = {2025},
+  eprint        = {2502.14137},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.IR}
+}
+
+@misc{CHATGPT,
+  author       = {OpenAI},
+  title        = {{ChatGPT}},
+  year         = {2023},
+  howpublished = {\url{https://chat.openai.com/chat}}
+}
+
+@misc{GEMINI,
+  author = {{Google DeepMind}},
+  title  = {Gemini},
+  year   = {2023},
+  url    = {https://www.deepmind.com/research/}
+}
+
+@misc{CLAUDE,
+  author = {Anthropic},
+  title  = {Claude},
+  year   = {2023},
+  url    = {https://www.anthropic.com/}
 }

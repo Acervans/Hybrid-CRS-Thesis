@@ -15,7 +15,7 @@
 \subtitle{Development of a Scalable Platform for Conversational Recommendations}
 \author{Javier Wang Zhou}
 \privateaddress{C\textbackslash\ Francisco Tomás y Valiente Nº 11}
-\copyrightdate{April 28, 2025}
+\copyrightdate{July 13, 2025}
 
 \dedication{To my family \& friends}
 \famouscite{Simplicity is the ultimate sophistication. \\[0.1em] \begin{flushright}Leonardo da Vinci\end{flushright}}
@@ -31,7 +31,7 @@
   C\textbackslash Francisco Tomás y Valiente nº 11
 }
 
-\bibliographyconfig{tfgtfmthesisuam}
+\bibliographyconfig{thesis_muii}
 
 \usepackage{hyperref}
 \usepackage{svg}
@@ -47,7 +47,7 @@
 \logosdir{muii/img}
 \codesdir{muii/codes}
 
-\input{acronyms}
+\input{acronyms_muii}
 
 \begin{document}
 
@@ -56,21 +56,16 @@
     \section{Objectives\label{SEC:GOALS}}{muii/1_introduction/objectives}
     \section{Work Structure\label{SEC:WORK_STRUCT}}{muii/1_introduction/work_structure}
   \chapter{State of the Art\label{CAP:STATE_OF_THE_ART}}{muii/2_state_of_the_art/state_of_the_art}
-    % Very high level, mention rag, function calling, but explain more in detail in MUI2ICSI referencing
     \section{Large Language Models\label{SEC:LLM}}{muii/2_state_of_the_art/llm/llm}
       \subsection{LLM Frameworks\label{SS:LLMFRAMEWORKS}}{muii/2_state_of_the_art/llm/frameworks}
-      % Reference CRS in MUI2ICSI for detailed SOTA
       \subsection{LLMs in Recommendation\label{SEC:LMREC}}{muii/2_state_of_the_art/llm/lmrec}
 
-    % Very high level, reference MUI2ICSI
     \section{Recommender Systems\label{SEC:RECSYS}}{muii/2_state_of_the_art/recsys/recsys}
 
-    % Applied to LLMs
     \section{Data Management \& Scalability\label{SEC:DATA_SCALA}}{muii/2_state_of_the_art/data_scala/data_scala}
       \subsection{Data Preprocessing\label{SS:DATAPREPROC}}{muii/2_state_of_the_art/data_scala/data_preprocessing}
       \subsection{Document Chunking\label{SS:CHUNKING}}{muii/2_state_of_the_art/data_scala/doc_chunking}
       \subsection{Vector Databases\label{SS:VECTORSTORE}}{muii/2_state_of_the_art/data_scala/vector_db}
-      % FalkorDB used in this project
       \subsection{Graph Databases\label{SS:GRAPHDB}}{muii/2_state_of_the_art/data_scala/graph_db}
 
     \section{Web Application Frameworks\label{SEC:WEBAPP_FRAMEWORKS}}{muii/2_state_of_the_art/webapp_frameworks/webapp_frameworks}
@@ -81,7 +76,6 @@
   \chapter{System Design\label{CAP:DESIGN}}{muii/3_design/design}
     \section{Requirements Analysis\label{SEC:REQUIREMENTS}}{muii/3_design/requirements}
 
-    % TODO mention modularization
     \section{Architecture Overview\label{SEC:ARCH}}{muii/3_design/architecture/architecture}
       \subsection{Use Case Diagram\label{SS:USECASEDIAG}}{muii/3_design/architecture/use_cases}
 
@@ -96,44 +90,35 @@
       \subsection{Accessibility\label{SS:ACCESSIBILITY}}{muii/3_design/frontend/accessibility}
       \subsection{Localization and Internationalization\label{SS:LOCALINTER}}{muii/3_design/frontend/localization}
 
-  % mention MODULARIZATION by CONTAINERIZATION of each system component using DOCKER FOR STREAMLINED DEVELOPMENT, SCALABILITY and PORTABILITY
   \chapter{Implementation\label{CAP:IMPLEMENTATION}}{muii/4_implementation/implementation}
-    % MUST BE HIGH LEVEL, REFERENCE MUI2ICSI
     \section{Backend Development\label{SEC:BACKDEV}}{muii/4_implementation/backend/backend}
-      % LlamaIndex (MUST BE HIGH LEVEL, REFERENCE MUI2ICSI)
       \subsection{LLM Integration\label{SS:LLMINTEG}}{muii/4_implementation/backend/llm_integration}
-      % RecBole
       \subsection{Recommender System Integration\label{SS:RECSYSINTEG}}{muii/4_implementation/backend/recsys_integration}
       \subsection{Automated Data Preprocessing\label{SS:AUTODATAPREPROC}}{muii/4_implementation/backend/data_processing}
 
       \subsection{API Endpoints\label{SS:ENDPOINTS}}{muii/4_implementation/backend/api_endpoints}
       \subsection{API Documentation\label{SS:DOCS}}{muii/4_implementation/backend/api_documentation}
 
-    % Next.js React Framework
     \section{Frontend Development\label{SEC:FRONTDEV}}{muii/4_implementation/frontend/frontend}
       \subsection{UI Components\label{SS:UICOMPS}}{muii/4_implementation/frontend/ui_components}
-      % React Context
       \subsection{State Management\label{SS:STATEMAN}}{muii/4_implementation/frontend/state_management}
       \subsection{API Integration\label{SS:APIINTEG}}{muii/4_implementation/frontend/api_integration}
       \subsection{Authentication and Authorization\label{SS:AUTH}}{muii/4_implementation/frontend/authentication}
 
     \section{Deployment\label{SEC:DEPLOYMENT}}{muii/4_implementation/deployment/deployment}
       \subsection{Docker Containerization\label{SS:DOCKER}}{muii/4_implementation/deployment/docker}
-      % Vercel OR Render
       \subsection{Frontend Deployment\label{SS:FRONTDEPLOY}}{muii/4_implementation/deployment/frontend_deployment}
-      % Zrok -> due to limitation on free tiers of cloud hosting services, it was necessary to run locally, using reverse proxy aka tunneling to allow exposure to frontend
       \subsection{Backend Tunneling\label{SS:BACKTUNNEL}}{muii/4_implementation/deployment/backend_tunneling}
-      % GitHub Actions to run tests, update front deployment || Husky precommit hook for linting,formatting
       \subsection{CI/CD Pipeline\label{SS:CICD}}{muii/4_implementation/deployment/cicd_pipeline}
 
   \chapter{Testing and Evaluation\label{CAP:TESTEVAL}}{muii/5_testing_eval/testing_eval}
     \section{Testing Environment\label{SEC:TESTENV}}{muii/5_testing_eval/testing_env}    
-    
-    \section{Unit Testing\label{SEC:UNITTEST}}{muii/5_testing_eval/unit_testing/unit_testing}
-      \subsection{Backend\label{SS:BACKUNITTEST}}{muii/5_testing_eval/unit_testing/backend}
-      \subsection{API\label{SS:APIUNITTEST}}{muii/5_testing_eval/unit_testing/api}
-      \subsection{Frontend\label{SS:FRONTUNITTEST}}{muii/5_testing_eval/unit_testing/frontend}
-    
+
+    \section{Unit \& Integration Testing\label{SEC:UNITINTEGTEST}}{muii/5_testing_eval/unit_integ_testing/unit_integ_testing}
+      \subsection{Backend\label{SS:BACKUNITTEST}}{muii/5_testing_eval/unit_integ_testing/backend}
+      \subsection{API\label{SS:APIINTEGTEST}}{muii/5_testing_eval/unit_integ_testing/api}
+      \subsection{Frontend\label{SS:FRONTTEST}}{muii/5_testing_eval/unit_integ_testing/frontend}
+
     \section{Performance Testing\label{SEC:PERFORMANCETEST}}{muii/5_testing_eval/perf_testing/perf_testing}
       \subsection{API Load Testing\label{SS:APILAT}}{muii/5_testing_eval/perf_testing/api_load}
       \subsection{LLM Inference Testing\label{SS:LLMLAT}}{muii/5_testing_eval/perf_testing/llm_inference}

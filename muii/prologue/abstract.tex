@@ -1,7 +1,14 @@
-Music recommendation systems play a pivotal role in catering to diverse user preferences and fostering personalized listening experiences. Likewise, sentiment can profoundly influence music by shaping its emotional expression and evoking specific moods onto listeners. This sentiment may be analyzed through natural language processing techniques to gauge emotions or opinions expressed in textual content, hopefully increasing relevance or significance when applied to the recommendation process.
+\glsreset{llm}
+\glsreset{api}
+\glsreset{pwa}
+\glsreset{ai}
 
-This project ventures into the field of sentiment analysis and its potential impact on music recommendation, attempting to enhance recommendation models by incorporating sentiment attributes derived from a manually retrieved dataset and a bespoke sentiment analyzer --- in pursuit of insightful correlations between emotion and musical taste.
+The recent proliferation of \acp{llm} has catalyzed significant interest in the development of advanced conversational systems. However, integrating these models into scalable, robust, and user-friendly \acl{recsys} platforms remains a complex engineering challenge. Current solutions often lack an end-to-end framework that simplifies deployment and supports real-world scalability.
 
-As a culmination of this research endeavor, a web application is developed to showcase the applied tools and the finest-performing recommender models. This platform illustrates the potential of emotion-aware recommendation, offering a view into the dimension of sentiment and its representation of personal preferences.
+This Master's Thesis addresses this problem by detailing the design and implementation of a scalable and modular platform for the creation of hybrid conversational recommender agents. The primary objective is to develop a comprehensive, full-stack solution that automates the entire lifecycle of a conversational agent, from creation and data processing to deployment and user interaction.
 
-\keywords{Recommender systems, music recommendation, sentiment analysis, data scraping, natural language processing}
+The platform is designed using a containerized approach with Docker to ensure modularity, portability, and scalability. The backend is built upon the high-performance FastAPI framework, which exposes a RESTful \ac{api} to manage agents, process datasets, and handle conversational logic. For the frontend, a responsive and installable \ac{pwa} was developed using Next.js, providing an intuitive interface for users to manage their recommender agents and engage in conversations. The system's data layer leverages Supabase, a cloud-based relational database for storing agent and conversation metadata; and FalkorDB as a high-performance graph database to model the relationships between users and items, and to store chat histories. A key feature is the automated data processing pipeline that handles the ingestion, cleansing, and structuring of user-uploaded datasets.
+
+The final result of this project is a fully functional, end-to-end platform that empowers users to seamlessly create, manage, and interact with personalized conversational recommender agents. The robust architecture prioritizes efficiency, scalability, and reproducibility, providing a solid foundation for future development and research at the intersection of conversational \acs{ai} and \acl{recsys}s.
+
+\keywords{Conversational recommender system, large language models, full-stack development, scalable architecture, system design, graph databases, FastAPI, Next.js, Docker}
