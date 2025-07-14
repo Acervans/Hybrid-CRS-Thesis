@@ -1,0 +1,5 @@
+FastAPI is a modern, high-performance web framework for building \acp{api} with Python \cite{FASTAPI}. Its design philosophy prioritizes development speed and runtime performance, making it an excellent choice for services that must handle potentially high loads and complex logic.
+
+One of the highlights of FastAPI is its automatic generation of interactive \acs{api} documentation. It depends on Python type hints and the Pydantic library to automatically validate, serialize, and deserialize data, while also creating a detailed OpenAPI (formerly Swagger) schema for the documentation. This feature proves pragmatic for development, testing, and potential integration with other services.
+
+Furthermore, FastAPI's performance is among the best in the Python ecosystem, as it is built atop the Starlette ASGI framework \cite{STARLETTE}. This ensures that the \acs{api} can handle concurrent requests efficiently, essential for a responsive user experience, especially when mediating long-running tasks involving \ac{llm} inference or data processing. These features collectively make FastAPI an ideal choice for the robust and scalable backend required by this project.

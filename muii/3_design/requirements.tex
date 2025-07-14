@@ -1,0 +1,70 @@
+One of the first and most important steps in any engineering project is the elicitation and definition of system requirements. This process establishes a clear set of goals and constraints that guide the architectural design and implementation. The requirements have been divided into functional specifications, which describe what the system must do, and non-functional specifications, which define the system's quality attributes.
+
+\subsection{Functional Requirements}
+\begin{functionalmod}[AUTH]
+    \item \textbf{User Authentication and Management:} The system must provide secure mechanisms for user authentication and account management.
+    \begin{functionalmod}
+        \item Users must be able to register using an email and password combination or via a Google OAuth provider.
+        \item Registrations via email must trigger a confirmation email to verify the user's address.
+        \item Registered users must be able to log in to access the platform.
+        \item A password reset mechanism must be available for users who have forgotten their password.
+        \item The system must provide a secure session key for authenticated users to interact with the \acs{api}.
+    \end{functionalmod}
+\end{functionalmod}
+
+\begin{functionalmod}[AGENT]
+    \item \textbf{Recommender Agent Lifecycle Management:} The platform must provide comprehensive functionalities for users to create, manage, and interact with conversational recommender agents.
+    \begin{functionalmod}
+        \item \textbf{Creation:} Users must be able to create a new agent by uploading datasets for interactions, item features, and user features. The system must support asynchronous processing of these files, including data cleansing, ingestion into the graph database, and the training of an expert recommender model.
+        \item \textbf{Discovery:} The platform must feature an ``Agent Hub'' where users can browse, search, filter, and sort all agents they have access to.
+        \item \textbf{Modification:} Agent creators must be able to edit their agent's metadata (e.g., name, description, visibility) and retrain the underlying model with updated data.
+        \item \textbf{Deletion:} Agent creators must be able to permanently delete their agents, which must trigger the removal of all associated artifacts, including dataset files, database entries, chat histories and trained models.
+    \end{functionalmod}
+\end{functionalmod}
+
+\begin{functionalmod}[CHAT]
+    \item \textbf{Conversational Interaction:} The system must offer a robust and feature-rich conversational interface.
+    \begin{functionalmod}
+        \item A dedicated chat interface must be available for interacting with each specific recommender agent.
+        \item Conversation histories with agents must be archived and available for users to review in a read-only format.
+        \item A general-purpose ``Open Chat'' must be provided for direct and unrestricted conversation with a selected \ac{llm}. This will be used to evaluate \acs{llm} model capabilities and for general-purpose queries and structured prediction.
+        \item The ``Open Chat'' interface should support advanced features present in modern conversational interfaces, such as web search, the ability to upload files for context, and message editing.
+        \item The conversations in the ``Open Chat'' interface must be persisted and may be resumed or deleted by the user.
+    \end{functionalmod}
+\end{functionalmod}
+
+\subsection{Non-Functional Requirements}
+\begin{nonfunctionalmod}[PERF]
+    \item \textbf{Performance:} The system must be highly responsive and efficient.
+    \begin{nonfunctionalmod}
+        \item The backend \acs{api} must maintain low latency, even under concurrent loads.
+        \item \Ac{llm} responses in the chat interface must be streamed token-by-token to minimize perceived latency.
+        \item Database queries for filtering and searching in the Agent Hub must be optimized for speed.
+    \end{nonfunctionalmod}
+\end{nonfunctionalmod}
+
+\begin{nonfunctionalmod}[USABIL]
+    \item \textbf{Usability and Accessibility:} The platform must provide a high-quality, intuitive, and accessible user experience.
+    \begin{nonfunctionalmod}
+        \item The user interface must be fully responsive, ensuring a seamless experience on both desktop and mobile devices.
+        \item The platform must support internationalization (\textit{i18n}) with translations for multiple languages.
+        \item Accessibility must be enhanced through features such as speech-to-text and text-to-speech in the chat interface.
+    \end{nonfunctionalmod}
+\end{nonfunctionalmod}
+
+\begin{nonfunctionalmod}[SEC]
+    \item \textbf{Security:} The system must ensure the confidentiality and integrity of user data.
+    \begin{nonfunctionalmod}
+        \item All \acs{api} endpoints must be protected against unauthorized access.
+        \item Row-Level Security (RLS) policies must be enforced in the database to ensure users can only access their own private conversations and agents.
+    \end{nonfunctionalmod}
+\end{nonfunctionalmod}
+
+\begin{nonfunctionalmod}[MAINT]
+    \item \textbf{Maintainability and Scalability:} The system must be designed for long-term maintenance, portability, and scalability.
+    \begin{nonfunctionalmod}
+        \item The architecture must be modular to allow for independent development and deployment of its components.
+        \item The entire application stack must be containerized using Docker to ensure portability and ease of deployment.
+        \item The architecture must support horizontal scaling to accommodate a growing user base.
+    \end{nonfunctionalmod}
+\end{nonfunctionalmod}
