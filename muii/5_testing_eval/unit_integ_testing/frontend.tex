@@ -1,0 +1,5 @@
+While the primary focus of the testing strategy was on the backend's complex logic, no unit or integration tests were carried out for the frontend. However, the frontend implementation benefits from multiple automated checks that help maintain code quality and catch common issues early in development.
+
+The entire frontend codebase is written in TypeScript, which enables static type checking at compile time. This helps detect many potential runtime errors—such as type mismatches or incorrect property access—before the code is even run, contributing to a more robust and self-documenting codebase.
+
+Additionally, as discussed in Chapter~\ref{CAP:IMPLEMENTATION}, a pre-commit hook managed by Husky automatically runs ESLint on every commit. ESLint provides static code analysis, enforcing a consistent coding style and flagging potential bugs, anti-patterns, and logical errors in the React and TypeScript code. These measures help uphold a high standard of frontend quality despite the absence of runtime testing.

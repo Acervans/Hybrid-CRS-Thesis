@@ -1,0 +1,7 @@
+The backend's business logic, which encompasses data processing, recommendation generation, and conversational state management, was thoroughly evaluated with unit tests to ensure its reliability.
+
+The data processing pipeline, implemented in \texttt{data\_utils.py}, was validated through \\ \texttt{test\_data\_utils.py}. These tests confirm the correctness of the \acs{llm}-based inference for identifying column roles and data types, ensuring the automated data preparation is robust.
+
+The core recommendation logic was tested in \texttt{test\_falkordb\_recommender.py}. Using a \texttt{pytest} fixture, a temporary mock dataset is created to test the \texttt{FalkorDBRecommender} class. The test suite validates the entire lifecycle, including data ingestion, graph creation, and the output of the different recommendation methods (context-aware, collaborative filtering, and hybrid recommendations), and the generation of explanations.
+
+Finally, the stateful components of the conversational workflow were validated. The \\ \texttt{test\_user\_profile.py} script tests the \texttt{UserProfile} class for managing user preferences mid-conversation, while \texttt{test\_falkordb\_chat\_history.py} ensures the reliable persistence of conversation logs in the graph database.
