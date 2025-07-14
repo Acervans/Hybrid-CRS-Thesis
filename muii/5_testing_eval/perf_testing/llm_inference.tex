@@ -1,0 +1,5 @@
+The perceived speed of a conversational agent is directly tied to the token generation throughput of its underlying \ac{llm}. A test was conducted to measure the raw inference speed of the locally hosted \texttt{qwen2.5:3b} model running on the NVIDIA RTX 3050 \acs{gpu}.
+
+A standard prompt (``Why is the sky blue?'') was sent to the model, which generated a 354-token response. The total generation time was 6.74 seconds. This yields a calculated throughput of approximately \textbf{52.5 tokens per second}.
+
+This result is highly favorable. It is comparable to the performance of cloud-based flagship models like GPT-4o and significantly exceeds the community-accepted standard of 7-10 tokens per second for a good user experience. Furthermore, given that the average human reading speed is around 4 tokens per second \cite{READING-SPEED}, this level of performance ensures that text is generated faster than the user can read it, creating a fluid conversational experience.
