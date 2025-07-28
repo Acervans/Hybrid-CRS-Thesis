@@ -1,0 +1,25 @@
+To contextualize the contributions of this thesis, this section provides a comparative analysis, positioning the developed platform against the state-of-the-art commercial and open-source systems. The comparison is structured around two key areas: the user-facing interface and the underlying backend architecture.
+
+\subsubsection{User Interface and Interaction Paradigm}
+
+The platform's frontend was designed to incorporate and synthesize several state-of-the-art paradigms observed in leading conversational platforms.
+
+\begin{compactitem}[\textbullet]
+    \item \textbf{Core Chat Interface:} The fundamental \acs{ui}, with its sidebar for chat history and a central message viewport, adopts the foundational design paradigm popularized by \textbf{ChatGPT} \cite{CHATGPT}. Like ChatGPT, it supports file uploads and advanced interaction beyond simple text.
+    
+    \item \textbf{Self-Hosted Philosophy:} Architecturally, the platform aligns closely with the ethos of \textbf{Open WebUI} \cite{OPENWEBUI}. By using Docker and supporting locally-hosted models via Ollama, it provides a self-hostable, privacy-preserving alternative to closed, proprietary systems.
+
+    \item \textbf{User Control and Context Scoping:} The ability for a user to create and chat with distinct agents, each trained on a specific dataset, implements a core principle of user control. This is conceptually similar to \textbf{Perplexity AI}'s ``Focus'' feature, which allows users to narrow the information source for a query, leading to more relevant and trustworthy results \cite{PERPLEXITY}.
+
+    \item \textbf{Collaborative Workspace:} Critically, the platform moves beyond a simple chat interface and successfully implements the ``Collaborative Workspace'' paradigm. It features a dedicated \textbf{Agent Creation} page that serves as a dataset management workspace, allowing users to upload and configure the data that powers their agents. Furthermore, within the chat, recommendations are rendered using a custom \texttt{RecommendationDisplay} component, which acts as an interactive visualization panel for the results and for providing feedback, rather than just plain text. This directly aligns with the advanced ``Artifacts'' and ``Canvas'' features seen in platforms like Claude and Gemini, making it a state-of-the-art implementation.
+\end{compactitem}
+
+\subsubsection{Backend Architecture and Development Framework}
+
+The backend architecture and choice of development framework align with modern best practices for building \ac{llm}-powered applications.
+
+\begin{compactitem}[\textbullet]
+    \item \textbf{Orchestration Framework:} The implementation uses \textbf{LlamaIndex}, a state-of-the-art, data-centric framework that excels at creating knowledge-intensive applications. This is a more flexible and powerful approach for a platform-oriented project compared to using more rigid, specialized academic toolkits like CRSLab \cite{CRSLAB}.
+
+    \item \textbf{Modular Design:} The system's architecture is represented by the modular ``Text-in, Text-out'' philosophy seen in toolkits like \textbf{RecWizard} \cite{RECWIZARD}. Instead of using a simple \ac{rag} pipeline, the project uses a LlamaIndex workflow to orchestrate a hybrid recommendation strategy. The conversational agent does not retrieve recommendations directly; rather, it uses function calling to intelligently invoke external, specialized tools: a pre-trained \textbf{EASER} expert model managed by RecBole, and a real-time, explainable recommender powered by the \textbf{FalkorDB} graph database. This multi-component approach demonstrates an advanced and robust implementation of modern conversational \acs{ai} principles.
+\end{compactitem}
