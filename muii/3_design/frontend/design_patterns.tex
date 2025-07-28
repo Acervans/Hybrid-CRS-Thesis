@@ -1,0 +1,9 @@
+The frontend architecture is built upon several key design patterns and principles to ensure it is maintainable, scalable, and provides a high-quality user experience.
+
+\begin{description}
+    \item[Component-Based Architecture] Following the core philosophy of the React library \cite{REACT}, the entire \acs{ui} is constructed from a series of reusable, self-contained components. This promotes modularity and code reuse. The project leverages a combination of a general component library, \texttt{shadcn/ui}, for common elements like buttons and forms, and a specialized library, \texttt{assistant-ui}, for the complex conversational chat interface.
+
+    \item[Centralized State Management] To manage application-wide state, such as user session data, the currently selected \ac{llm}, or conversational context, the application employs React's Context \acs{api}. A hierarchy of context providers is established at the root of the application, allowing any component to access or modify shared state without the need for ``prop drilling'' (passing properties down through multiple layers of components).
+
+    \item[Responsive Design] A responsive, mobile-first design principle was adopted to ensure a seamless and consistent experience across all device types, from large desktop monitors to small mobile screens. This is achieved through the use of Tailwind CSS \cite{TAILWIND-CSS}, a utility-first CSS framework that facilitates the creation of adaptive layouts.
+\end{description}

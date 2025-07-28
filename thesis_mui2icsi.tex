@@ -18,7 +18,7 @@
 \copyrightdate{April 28, 2025}
 
 \dedication{To my family \& friends}
-\famouscite{We are surrounded by data, but starved for insights. \\[0.1em] \begin{flushright}Jay Baer\end{flushright}}
+\famouscite{Without data, you are just another person with an opinion. \\[0.1em] \begin{flushright}Andreas Schleicher\end{flushright}}
 % \prefacefile{inicio/prefacio}
 \ackfile{mui2icsi/prologue/agradecimientos}
 \resumenfile{mui2icsi/prologue/resumen}
@@ -38,12 +38,14 @@
 \usepackage{paralist}
 \usepackage{multicol}
 \usepackage{multirow}
+\usepackage{lmodern}
 
 \setlength{\plitemsep}{0.5em}
 
 \svgpath{{mui2icsi/img/}}
 \datadir{mui2icsi/data}
 \graphicsdir{mui2icsi/img}
+\graphicspath{{mui2icsi/img/}}
 \logosdir{mui2icsi/img}
 \codesdir{mui2icsi/codes}
 
@@ -68,10 +70,11 @@
       % Hybrid models
       \subsection{Model Classification\label{SS:MODELCLASS}}{mui2icsi/2_state_of_the_art/recsys/model_classification}
       \subsection{Evaluation\label{SS:RECSYSEVAL}}{mui2icsi/2_state_of_the_art/recsys/evaluation}
+      \subsection{The Cold-Start Problem\label{SS:COLDSTART}}{mui2icsi/2_state_of_the_art/recsys/cold_start}
 
     \section{Conversational Recommender Systems\label{SEC:CRS}}{mui2icsi/2_state_of_the_art/crs/crs}
+      \subsection{Architectural Components of a \acs{crs}\label{SS:CRSARCH}}{mui2icsi/2_state_of_the_art/crs/architectural_components}
       \subsection{Latest Developments\label{SS:CRSDEVS}}{mui2icsi/2_state_of_the_art/crs/latest_developments}
-    % Mention similar projects like this, justify contributions?
 
     \section{Explainability in Recommendation\label{SEC:EXPLAINABILITY}}{mui2icsi/2_state_of_the_art/explainability/explainability}
       \subsection{Popular Methods\label{SS:POPMETHODS}}{mui2icsi/2_state_of_the_art/explainability/popular_methods}
@@ -93,29 +96,27 @@
         \subsubsection{Model Selection\label{SSS:MODELSELECT}}{mui2icsi/3_methodology/hybrid_crs/expert_recsys/model_selection}
       \subsection{Generation of Natural Language Explanations\label{SS:GENEXPLAIN}}{mui2icsi/3_methodology/hybrid_crs/explainability}
 
-  \chapter{Experiments and Results\label{CAP:EXPRES}}{mui2icsi/4_experiments/experiments}
-    \section{Environment\label{SEC:ENVIRONMENT}}{mui2icsi/4_experiments/environment}
+  \chapter{Experiments and Results\label{CAP:EXPRES}}{mui2icsi/4_experiments_results/experiments_results}
+    \section{Environment\label{SEC:ENVIRONMENT}}{mui2icsi/4_experiments_results/environment}
 
-    \section{Datasets\label{SEC:DATASETS}}{mui2icsi/4_experiments/datasets/datasets}
-      \subsection{MovieLens\label{SS:MOVIELENS}}{mui2icsi/4_experiments/datasets/movielens}
-      \subsection{Anime\label{SS:LASTFM}}{mui2icsi/4_experiments/datasets/anime}
+    \section{Datasets\label{SEC:DATASETS}}{mui2icsi/4_experiments_results/datasets/datasets}
+      \subsection{MovieLens\label{SS:MOVIELENS}}{mui2icsi/4_experiments_results/datasets/movielens}
+      \subsection{Anime\label{SS:LASTFM}}{mui2icsi/4_experiments_results/datasets/anime}
 
-    \section{Experiments\label{SEC:EXPERIMENTS}}{mui2icsi/4_experiments/experiments/experiments}
-      \subsection{Recommendation Evaluation\label{SS:RECEVAL}}{mui2icsi/4_experiments/experiments/rec_eval}
-      \subsection{Retrieval Evaluation\label{SS:RAGEVAL}}{mui2icsi/4_experiments/experiments/rag_eval}
-      \subsection{Usability Testing\label{SS:USABILITYTEST}}{mui2icsi/4_experiments/experiments/usability_testing/usability_testing}
-        \subsubsection{Guided Testing\label{SSS:GUIDEDTEST}}{mui2icsi/4_experiments/experiments/usability_testing/guided_testing}
-        \subsubsection{System Usability Scale (SUS)\label{SSS:SUS}}{mui2icsi/4_experiments/experiments/usability_testing/sus}
-      \subsection{Explainability Evaluation\label{SS:EXPLAINEVAL}}{mui2icsi/4_experiments/experiments/explain_eval}
+    \section{Experiments\label{SEC:EXPERIMENTS}}{mui2icsi/4_experiments_results/experiments/experiments}
+      \subsection{Usability Testing\label{SS:USABILITYTEST}}{mui2icsi/4_experiments_results/experiments/usability_testing/usability_testing}
+        \subsubsection{Guided Testing\label{SSS:GUIDEDTEST}}{mui2icsi/4_experiments_results/experiments/usability_testing/guided_testing}
+        \subsubsection{System Usability Scale (SUS)\label{SSS:SUS}}{mui2icsi/4_experiments_results/experiments/usability_testing/sus}
+      \subsection{Recommendation Evaluation\label{SS:RECEVAL}}{mui2icsi/4_experiments_results/experiments/rec_eval}
+      \subsection{Explainability Evaluation\label{SS:EXPLAINEVAL}}{mui2icsi/4_experiments_results/experiments/exp_eval}
 
-    \section{Results\label{SEC:RESULTS}}{mui2icsi/4_experiments/results/results}
-      \subsection{Recommendation Accuracy\label{SS:RECACC}}{mui2icsi/4_experiments/results/rec_acc}
-      \subsection{Retrieval Accuracy\label{SS:RAGACC}}{mui2icsi/4_experiments/results/rag_acc}
+    \section{Results\label{SEC:RESULTS}}{mui2icsi/4_experiments_results/results/results}
       % TODO ANOVA / t-test...
-      \subsection{System Usability\label{SS:USABILITY}}{mui2icsi/4_experiments/results/usability/usability}
-        \subsubsection{User Satisfaction\label{SSS:USERSAT}}{mui2icsi/4_experiments/results/usability/user_satisfaction}
-        \subsubsection{User Feedback\label{SSS:USERFEEDBACK}}{mui2icsi/4_experiments/results/usability/user_feedback}
-      \subsection{Explainability Impact\label{SS:EXPLAIN}}{mui2icsi/4_experiments/results/explain}
+      \subsection{System Usability\label{SS:USABILITY}}{mui2icsi/4_experiments_results/results/usability/usability}
+        \subsubsection{User Satisfaction\label{SSS:USERSAT}}{mui2icsi/4_experiments_results/results/usability/user_satisfaction}
+        \subsubsection{User Feedback\label{SSS:USERFEEDBACK}}{mui2icsi/4_experiments_results/results/usability/user_feedback}
+      \subsection{Recommendation Accuracy\label{SS:RECACC}}{mui2icsi/4_experiments_results/results/rec_metrics}
+      \subsection{Explainability Impact\label{SS:EXPLAIN}}{mui2icsi/4_experiments_results/results/exp_metrics}
 
   \chapter{Conclusions and Future Work\label{CAP:CONCLUSIONS}}
     \section{Conclusions\label{SEC:CONCLUSIONS}}{mui2icsi/5_conclusions/conclusions}

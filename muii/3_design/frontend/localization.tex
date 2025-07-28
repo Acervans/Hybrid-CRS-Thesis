@@ -1,0 +1,5 @@
+To cater to a global user base, the platform was designed and built with internationalization (i18n) as a core principle. The goal is to provide a fully localized experience where users can interact with the interface in their native language.
+
+This is achieved using the \texttt{next-intl} library \cite{NEXT-INTL}, a dedicated solution for adding i18n to Next.js applications. All user-facing strings within the \acs{ui} are externalized from the components and stored in separate JSON files, one for each supported language. At the time of writing, the platform is fully localized for seven languages: English, Spanish, German, French, Italian, Portuguese, and Chinese.
+
+A language selector component is integrated into the application's main header, allowing users to dynamically switch their preferred language. The \texttt{next-intl} library handles the loading of the appropriate message file and re-rendering the \acs{ui} with the localized strings, offering a user-friendly translation experience.

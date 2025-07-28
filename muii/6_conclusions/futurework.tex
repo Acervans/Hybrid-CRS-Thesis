@@ -1,1 +1,22 @@
-TODO
+While the current platform provides a robust and functional foundation, there is still much room for future development that could further enhance its capabilities, scalability, and user experience. The following points outline potential directions for future work, many of which are informed by the feedback gathered during usability testing.
+
+The platform could be extended with more advanced administrative features to increase its flexibility. This could include:
+\begin{compactitem}[\textbullet]
+    \item \textbf{Role-Based Access Control (RBAC):} Implementing a more granular role system with distinct permissions for an \texttt{Admin}, an \texttt{Agent Creator}, and a \texttt{Regular User}. An administrator could manage platform-wide settings, such as the available \acp{llm} and expert recommender models.
+    \item \textbf{Custom Recommender Configuration:} Allowing advanced users or administrators to directly edit the RecBole YAML configuration for an agent, providing fine-grained control over the expert model's hyperparameters.
+\end{compactitem}
+
+The current implementation of the conversational workflow relies on an in-memory dictionary to map workflow instances, which constrains the backend to a single worker process. To support a larger number of concurrent users, the architecture could be evolved to:
+\begin{compactitem}[\textbullet]
+    \item \textbf{Migrate to Kubernetes:} Deploying the services on a Kubernetes cluster to enable multi-node horizontal scaling and load balancing.
+    \item \textbf{Adopt a Stateful Connection Protocol:} To overcome the single-worker limitation, the communication for conversational workflows could be transitioned from standard HTTP requests to a persistent connection protocol like WebSockets. This would ensure that all messages within a single user session are routed to the same process, even in a multi-container environment.
+\end{compactitem}
+
+Based on feedback from the usability study, several \acs{ui}/\acs{ux} improvements could be implemented:
+\begin{compactitem}[\textbullet]
+    \item \textbf{Improved Recommendation Interaction:} Enhancing the feedback mechanism to include a ``Didn't watch'' option, or transitioning to a rating slider only after a user confirms they have seen an item.
+    \item \textbf{Increased Transparency:} Adding tags or labels to recommendations to clearly indicate their source (e.g., from contextual preferences, collaborative filtering, or the expert model).
+    \item \textbf{User Onboarding:} Implementing a brief tutorial or context-sensitive info tooltips, particularly for the multi-step agent creation process, to guide non-technical users.
+\end{compactitem}
+
+These enhancements would significantly strengthen the platform's usability, scalability, and long-term adaptability. The platform's modular architecture, combined with the use of containerization solutions, positions it well for future expansion and integration with emerging technologies in the field of \aclp{crs}.

@@ -1,0 +1,10 @@
+Accessibility was taken into consideration during the design of the frontend to ensure the platform is usable by the widest possible userbase.
+
+The primary accessibility enhancements are focused on the chat interface, which is the main mode of interaction. The platform integrates the Web Speech \acs{api} to provide:
+\begin{compactitem}[\textbullet]
+    \item \textbf{Speech-to-Text:} This allows users to dictate their messages using their microphone, offering an alternative to keyboard input.
+    \item \textbf{Text-to-Speech:} This enables the system to read \ac{llm} responses aloud, which is particularly beneficial for users with visual impairments.
+\end{compactitem}
+It is noted that due to browser-specific implementations of the Web Speech \acs{api}, these features currently offer the best performance in Google Chrome.
+
+In addition to these explicit features, best practices for web accessibility, such as using semantic HTML and ensuring keyboard navigability, are largely upheld through the use of the compliant component library, \texttt{shadcn/ui}.
