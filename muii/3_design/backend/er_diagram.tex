@@ -13,3 +13,5 @@ The core entities are defined as follows:
     \item \textbf{ChatHistory:} This table archives the records of conversations. Each entry is linked to a \texttt{user\_id}, and optionally to an \texttt{agent\_id} (which is \texttt{null} for Open Chat histories), storing the conversation title and an \texttt{archived} flag to distinguish active from read-only sessions.
     \item \textbf{KeepAlive:} A utility table with a single auto-incrementing counter. Its sole purpose is to be updated by a scheduled daily job to prevent the database from being paused by Supabase's inactivity policy.
 \end{compactitem}
+
+\textcolor{red}{En RecommenderAgent no es obvio el significado de la variable new\_sessions, ¿valdría la pena mencionarla en el párrafo como ya has hecho con otras variables?}
