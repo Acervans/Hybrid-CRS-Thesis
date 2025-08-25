@@ -19,7 +19,6 @@
 
 \dedication{To my family \& friends}
 \famouscite{Without data, you are just another person with an opinion. \\[0.1em] \begin{flushright}Andreas Schleicher\end{flushright}}
-% \prefacefile{inicio/prefacio}
 \ackfile{mui2icsi/prologue/agradecimientos}
 \resumenfile{mui2icsi/prologue/resumen}
 \abstractfile{mui2icsi/prologue/abstract}
@@ -39,6 +38,7 @@
 \usepackage{multicol}
 \usepackage{multirow}
 \usepackage{lmodern}
+\usepackage{minted}
 
 \setlength{\plitemsep}{0.5em}
 
@@ -61,13 +61,13 @@
   \chapter{State of the Art\label{CAP:STATE_OF_THE_ART}}{mui2icsi/2_state_of_the_art/state_of_the_art}
     \section{Large Language Models\label{SEC:LLM}}{mui2icsi/2_state_of_the_art/llm/llm}
       \subsection{LLM Frameworks\label{SS:LLMFRAMEWORKS}}{mui2icsi/2_state_of_the_art/llm/frameworks}
-      % GraphRAG
       \subsection{Retrieval-Augmented Generation\label{SS:RAG}}{mui2icsi/2_state_of_the_art/llm/rag}
       \subsection{Function Calling\label{SS:FUNCTION_CALLING}}{mui2icsi/2_state_of_the_art/llm/function_calling}
       \subsection{Fine-tuning\label{SS:FINE_TUNING}}{mui2icsi/2_state_of_the_art/llm/fine_tuning}
+      \subsection{LLM Quantization\label{SS:QUANTIZATION}}{mui2icsi/2_state_of_the_art/llm/quantization}
+      \subsection{Evaluation\label{SS:EVALUATION}}{mui2icsi/2_state_of_the_art/llm/evaluation}
 
     \section{Recommender Systems\label{SEC:RECSYS}}{mui2icsi/2_state_of_the_art/recsys/recsys}
-      % Hybrid models
       \subsection{Model Classification\label{SS:MODELCLASS}}{mui2icsi/2_state_of_the_art/recsys/model_classification}
       \subsection{Evaluation\label{SS:RECSYSEVAL}}{mui2icsi/2_state_of_the_art/recsys/evaluation}
       \subsection{The Cold-Start Problem\label{SS:COLDSTART}}{mui2icsi/2_state_of_the_art/recsys/cold_start}
@@ -77,18 +77,19 @@
       \subsection{Latest Developments\label{SS:CRSDEVS}}{mui2icsi/2_state_of_the_art/crs/latest_developments}
 
     \section{Explainability in Recommendation\label{SEC:EXPLAINABILITY}}{mui2icsi/2_state_of_the_art/explainability/explainability}
+      \subsection{A Taxonomy of \acs{xai} Methods\label{SS:XAITAXONOMY}}{mui2icsi/2_state_of_the_art/explainability/xai_taxonomy}
       \subsection{Popular Methods\label{SS:POPMETHODS}}{mui2icsi/2_state_of_the_art/explainability/popular_methods}
+      \subsection{Evaluating Explanation Quality\label{SS:EVALEXPLAIN}}{mui2icsi/2_state_of_the_art/explainability/evaluation}
 
   \chapter{Methodology\label{CAP:METHODOLOGY}}{mui2icsi/3_methodology/methodology}
     \section{Research Framework\label{SEC:RESEARCHFW}}{mui2icsi/3_methodology/research_framework/research_framework}
-      % Event-driven workflow
       \subsection{Conversation Workflow and Preference Elicitation\label{SS:CONVPREF}}{mui2icsi/3_methodology/research_framework/conversation_workflow}
       \subsection{Retrieval-Augmented Generation for Contextual Recommendations\label{SS:RAGRECS}}{mui2icsi/3_methodology/research_framework/rag_recs}
       \subsection{Expert Recommender Model for Personalized Recommendations\label{SS:EXPERTRECSYS}}{mui2icsi/3_methodology/research_framework/expert_recsys}
       \subsection{Explainability using Natural Language Explanations\label{SS:EXPLAINNLE}}{mui2icsi/3_methodology/research_framework/explainability}
 
-    % TODO (Intro) LLM Workflow (Explain Event-driven, RAG, Function Calls, Final recommendation generation)
     \section{Hybrid Conversational Recommender System\label{SEC:HYBRIDCRS}}{mui2icsi/3_methodology/hybrid_crs/hybrid_crs}
+      \subsection{Workflow Implementation\label{SS:IMPLEM}}{mui2icsi/3_methodology/hybrid_crs/workflow}
       \subsection{User Profiling\label{SS:USERPROF}}{mui2icsi/3_methodology/hybrid_crs/user_profiling}
       \subsection{Integration of Retrieval-Augmented Generation\label{SS:INTEGRAGRECS}}{mui2icsi/3_methodology/hybrid_crs/rag_recs}
       \subsection{Integration of an Expert Recommender Model\label{SS:INTEGEXPERTRECSYS}}{mui2icsi/3_methodology/hybrid_crs/expert_recsys/expert_recsys}
@@ -111,7 +112,6 @@
       \subsection{Explainability Evaluation\label{SS:EXPLAINEVAL}}{mui2icsi/4_experiments_results/experiments/exp_eval}
 
     \section{Results\label{SEC:RESULTS}}{mui2icsi/4_experiments_results/results/results}
-      % TODO ANOVA / t-test...
       \subsection{System Usability\label{SS:USABILITY}}{mui2icsi/4_experiments_results/results/usability/usability}
         \subsubsection{User Satisfaction\label{SSS:USERSAT}}{mui2icsi/4_experiments_results/results/usability/user_satisfaction}
         \subsubsection{User Feedback\label{SSS:USERFEEDBACK}}{mui2icsi/4_experiments_results/results/usability/user_feedback}
@@ -124,9 +124,7 @@
     \section{Future Work\label{SEC:FUTUREWORK}}{mui2icsi/5_conclusions/futurework}
 
   \appendix
-  % \chapter{Web Application\label{AP:WEBAPP}}{mui2icsi/appendix/webapp}
-  % \chapter{External Libraries\label{AP:EXTLIB}}{mui2icsi/appendix/extlib}
-  % \chapter{Data Preprocessing\label{AP:DATAPROC}}{mui2icsi/appendix/dataproc}
-  % \chapter{Model Implementations\label{AP:MODELS}}{mui2icsi/appendix/models}
+  \chapter{FalkorDB Cypher Queries\label{AP:CYPHER_QUERIES}}{mui2icsi/appendix/cypher_queries}
+  \chapter{System Usability Questionnaire\label{AP:HYBRIDCRS_QUESTIONNAIRE}}{mui2icsi/appendix/hybridcrs_questionnaire}
 
 \end{document}

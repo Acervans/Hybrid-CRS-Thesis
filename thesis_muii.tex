@@ -7,7 +7,7 @@
 % arara: pdflatex: {shell: yes}
 % arara: clean: {files: [thesis_muii.aux, thesis_muii.idx, thesis_muii.ilg, thesis_muii.ind, thesis_muii.bbl, thesis_muii.bcf, thesis_muii.blg, thesis_muii.run.xml, thesis_muii.fdb_latexmk, thesis_muii.fls, thesis_muii.loe, thesis_muii.lof, thesis_muii.lol, thesis_muii.lot, thesis_muii.ltb, thesis_muii.out, thesis_muii.toc, thesis_muii.upa, thesis_muii.upb, thesis_muii.acn, thesis_muii.acr, thesis_muii.alg, thesis_muii.glg, thesis_muii.glo, thesis_muii.gls, thesis_muii.glsdefs, thesis_muii.idx,  thesis_muii.ilg, thesis_muii.xdy, thesis_muii.loa, thesis_muii.gnuploterrors , thesis_muii.mw, thesis_muii.fdb_latexmk ]}
 
-\documentclass[english,epsbased,copyright,final,printable,covers,extendedindex,firstnumbered,tfm,gnuplot,loc,loe,lof,lot]{tfgtfmthesisuam}
+\documentclass[english,epsbased,copyright,final,printable,covers,extendedindex,firstnumbered,tfm,gnuplot,loc,lof,lot]{tfgtfmthesisuam}
 
 \advisor{Alejandro Bellogín Kouki}
 \levelin{Computer Science and Engineering}
@@ -15,11 +15,10 @@
 \subtitle{Development of a Scalable Platform for Conversational Recommendations}
 \author{Javier Wang Zhou}
 \privateaddress{C\textbackslash\ Francisco Tomás y Valiente Nº 11}
-\copyrightdate{July 13, 2025}
+\copyrightdate{August 25, 2025}
 
 \dedication{To my family \& friends}
 \famouscite{Simplicity is the ultimate sophistication. \\[0.1em] \begin{flushright}Leonardo da Vinci\end{flushright}}
-% \prefacefile{inicio/prefacio}
 \ackfile{muii/prologue/agradecimientos}
 \resumenfile{muii/prologue/resumen}
 \abstractfile{muii/prologue/abstract}
@@ -79,7 +78,8 @@
     \section{Requirements Analysis\label{SEC:REQUIREMENTS}}{muii/3_design/requirements}
 
     \section{Architecture Overview\label{SEC:ARCH}}{muii/3_design/architecture/architecture}
-      \subsection{Use Case Diagram\label{SS:USECASEDIAG}}{muii/3_design/architecture/use_cases}
+      \subsection{System Components\label{SS:SYSCOMPS}}{muii/3_design/architecture/system_components}
+      \subsection{Use Case Analysis\label{SS:USECASEDIAG}}{muii/3_design/architecture/use_cases}
 
     \section{Backend Design\label{SEC:BACKDESIGN}}{muii/3_design/backend/backend}
       \subsection{Module Definition\label{SS:MODULEDEF}}{muii/3_design/backend/module_definition}
@@ -97,7 +97,6 @@
       \subsection{LLM Integration\label{SS:LLMINTEG}}{muii/4_implementation/backend/llm_integration}
       \subsection{Recommender System Integration\label{SS:RECSYSINTEG}}{muii/4_implementation/backend/recsys_integration}
       \subsection{Automated Data Preprocessing\label{SS:AUTODATAPREPROC}}{muii/4_implementation/backend/data_processing}
-
       \subsection{API Endpoints\label{SS:ENDPOINTS}}{muii/4_implementation/backend/api_endpoints}
       \subsection{API Documentation\label{SS:DOCS}}{muii/4_implementation/backend/api_documentation}
 
@@ -118,16 +117,14 @@
 
     \section{Unit \& Integration Testing\label{SEC:UNITINTEGTEST}}{muii/5_testing_eval/unit_integ_testing/unit_integ_testing}
       \subsection{Backend\label{SS:BACKUNITTEST}}{muii/5_testing_eval/unit_integ_testing/backend}
-      \subsection{API\label{SS:APIINTEGTEST}}{muii/5_testing_eval/unit_integ_testing/api}
       \subsection{Frontend\label{SS:FRONTTEST}}{muii/5_testing_eval/unit_integ_testing/frontend}
 
     \section{Performance Testing\label{SEC:PERFORMANCETEST}}{muii/5_testing_eval/perf_testing/perf_testing}
       \subsection{API Load Testing\label{SS:APILAT}}{muii/5_testing_eval/perf_testing/api_load}
       \subsection{LLM Inference Testing\label{SS:LLMLAT}}{muii/5_testing_eval/perf_testing/llm_inference}
-    
-    % HIGH LEVEL, ONLY RESULTS SUMMARY, REFERENCE MUI2ICSI
+
     \section{Usability Testing\label{SEC:USABILITYTEST}}{muii/5_testing_eval/usability_testing/usability_testing}
-    
+
     \section{Comparative Analysis\label{SEC:COMPANALYSIS}}{muii/5_testing_eval/comp_analysis/comp_analysis}
 
   \chapter{Conclusions and Future Work\label{CAP:CONCLUSIONS}}
@@ -136,9 +133,9 @@
     \section{Future Work\label{SEC:FUTUREWORK}}{muii/6_conclusions/futurework}
 
   \appendix
-  % \chapter{Web Application\label{AP:WEBAPP}}{muii/appendix/webapp}
-  % \chapter{External Libraries\label{AP:EXTLIB}}{muii/appendix/extlib}
-  % \chapter{Data Preprocessing\label{AP:DATAPROC}}{muii/appendix/dataproc}
-  % \chapter{Model Implementations\label{AP:MODELS}}{muii/appendix/models}
+  \chapter{API Schemas\label{AP:SCHEMAS}}{muii/appendix/schemas}
+  \chapter{Web Application Screenshots\label{AP:WEB_APP_SCREENSHOTS}}{muii/appendix/web_app_screenshots}
+  \chapter{Mobile Screenshots\label{AP:MOBILE_SCREENSHOTS}}{muii/appendix/mobile_screenshots}
+  \chapter{Backend Tests\label{AP:BACKEND_TESTS}}{muii/appendix/backend_tests}
 
 \end{document}

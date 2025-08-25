@@ -1,0 +1,13 @@
+The primary components of the system are:
+\begin{compactitem}[\textbullet]
+    \item \textbf{Frontend Application:} A client-side \ac{pwa} built with Next.js, which serves as the sole point of interaction for the end-user. It is responsible for rendering the entire user interface and managing client-side state.
+    \item \textbf{Backend \acs{api}:} A central, high-performance \acs{api} developed in FastAPI. This component acts as an orchestrator, handling all domain logic, user authentication, and routing requests to the appropriate downstream services.
+    \item \textbf{LLM Service:} A dedicated container running Ollama, responsible for hosting, managing, and serving inferences from the open-source \acp{llm}.
+    \item \textbf{Data Services:} A hybrid solution with two data storage services, consisting of a Supabase \cite{SUPABASE} PostgreSQL instance for structured metadata, and a FalkorDB graph database (NoSQL) for storing and querying both user-item interaction data and chat history records.
+\end{compactitem}
+
+Each of these components can be containerized using Docker, ensuring environmental consistency and portability across different development stages. In production, though, the Frontend and the Supabase services are deployed in cloud environments, while the rest is deployed on-premises and accessible through the Backend \acs{api}. This modular design, illustrated in Figure~\ref{FIG:ARCH_OVERVIEW}, is fundamental to achieving the system's non-functional requirements of scalability and maintainability.
+
+\begin{figure}[System Architecture Diagram]{FIG:ARCH_OVERVIEW}{High-Level System Architecture Diagram.}
+    \includegraphics[width=0.85\textwidth]{architecture_overview.pdf}
+\end{figure}

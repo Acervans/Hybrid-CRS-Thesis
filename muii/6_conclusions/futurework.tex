@@ -9,13 +9,13 @@ The platform could be extended with more advanced administrative features to inc
 The current implementation of the conversational workflow relies on an in-memory dictionary to map workflow instances, which constrains the backend to a single worker process. To support a larger number of concurrent users, the architecture could be evolved to:
 \begin{compactitem}[\textbullet]
     \item \textbf{Migrate to Kubernetes:} Deploying the services on a Kubernetes cluster to enable multi-node horizontal scaling and load balancing.
-    \item \textbf{Adopt a Stateful Connection Protocol:} To overcome the single-worker limitation, the communication for conversational workflows could be transitioned from standard HTTP requests to a persistent connection protocol like WebSockets. This would ensure that all messages within a single user session are routed to the same process, even in a multi-container environment.
+    \item \textbf{Stateful Connection Protocol:} To overcome the single-worker limitation, the communication for conversational workflows could be transitioned from standard HTTP requests to a persistent connection protocol like WebSockets. This would ensure that all messages within a single user session are routed to the same process, even in a multi-container environment.
 \end{compactitem}
 
 Based on feedback from the usability study, several \acs{ui}/\acs{ux} improvements could be implemented:
 \begin{compactitem}[\textbullet]
-    \item \textbf{Improved Recommendation Interaction:} Enhancing the feedback mechanism to include a ``Didn't watch'' option, or transitioning to a rating slider only after a user confirms they have seen an item.
-    \item \textbf{Increased Transparency:} Adding tags or labels to recommendations to clearly indicate their source (e.g., from contextual preferences, collaborative filtering, or the expert model).
+    \item \textbf{Item Knowledge Confirmation:} Enhancing the feedback mechanism to include a ``No opinion'' option, or transitioning to a rating slider only after a user confirms they have seen an item.
+    \item \textbf{Recommendation Tagging:} Adding tags or labels to recommendations to clearly indicate their source (e.g., from contextual preferences, collaborative filtering, or the expert model).
     \item \textbf{User Onboarding:} Implementing a brief tutorial or context-sensitive info tooltips, particularly for the multi-step agent creation process, to guide non-technical users.
 \end{compactitem}
 

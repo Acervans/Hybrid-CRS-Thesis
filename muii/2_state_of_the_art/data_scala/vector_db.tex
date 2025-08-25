@@ -1,5 +1,3 @@
 Vector databases have become a foundational technology for modern \ac{ai} applications, especially those utilizing embeddings to represent data like text or images. These databases are specialized systems designed to store and query high-dimensional vector representations of data efficiently.
 
 In a typical \ac{rag} pipeline, after documents are divided into chunks, each chunk is passed through an embedding model to convert it into a numerical vector. These vectors are then stored in a vector database, which uses specialized indexing algorithms (e.g., Hierarchical Navigable Small World - HNSW) to enable fast and scalable similarity searches \cite{SOTA-RAG-SURVEY}. When a user submits a query, it is also converted into a vector, and the database is queried to find the stored vectors that are ``closest'' in the embedding space. This rapid retrieval of the most relevant document chunks is essential for providing the \ac{llm} with the right context to answer the query. While this project's architecture supports vector stores, its primary data engine for recommendations is a graph database.
-
-% ADD A PICTURE %

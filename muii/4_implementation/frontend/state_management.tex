@@ -1,0 +1,12 @@
+To manage the application's global state in a clean and scalable manner, the implementation relies heavily on React's Context \acs{api}. Instead of a single, monolithic state store, a series of distinct, domain-specific contexts are used to provide shared state to different parts of the component tree. This approach ensures a clear separation of concerns, resulting in a more performant and maintainable state management architecture. Each context is defined in its own module, encapsulating its state, actions, and provider component. The main contexts implemented for the platform include:
+
+\begin{compactitem}[\textbullet]
+    \item \textbf{AssistantProvider:} One of the main providers that wrap the dashboard, providing access to all contexts. It manages the state of the active conversations, threads, and persistence of chat histories.
+    \item \textbf{SupabaseContext:} Provides the Supabase client instance and user authentication state throughout the application.
+    \item \textbf{WorkflowContext:} Responsible for managing the state of an active conversation with a recommender agent, tracking the \texttt{workflowId}, handling the streaming of events from the backend, and managing user feedback on recommendations. It is the foremost context in the dashboard and wraps the \texttt{AssistantProvider}.
+    \item \textbf{DataContext:} Handles the agent creation workflow and is responsible for tracking user-uploaded data files, the agent's configuration details (e.g., name, description), and the submission process.
+    \item \textbf{ModelContext:} Holds the state for the currently selected \ac{llm} and the active recommender agent.
+    \item \textbf{LocaleContext:} Manages the currently selected language for internationalization.
+\end{compactitem}
+
+In addition to client-side state, the platform implements real-time state synchronization with the database. Through Supabase's real-time capabilities, the frontend subscribes to database changes in the \texttt{RecommenderAgent} table. This ensures that when an agent is created, edited, or deleted, the Agent Hub view updates immediately for all connected clients without the need for manual refreshes, creating a live and responsive environment.

@@ -1,4 +1,4 @@
-To measure the backend's performance under stress, load tests were conducted using Siege \cite{SIEGE}, an open-source HTTP/HTTPS benchmarking utility. The tests were configured to simulate 10 concurrent users making continuous requests over a 30-second period. All requests included a valid \acs{jwt} to ensure the authentication middleware was also evaluated. Three key endpoints were selected to test different aspects of the backend:
+To measure the backend's performance under stress, load tests were conducted using Siege \cite{SIEGE}, an open-source HTTP/HTTPS benchmarking utility. The tests were configured to simulate 10 concurrent users making continuous requests over a 30-second period. All requests included a valid \acs{jwt} to ensure the authentication middleware was also evaluated. Three endpoints were selected to test different aspects of the backend:
 
 \begin{compactitem}[\textbullet]
     \item \textbf{Root (\texttt{/}):} A baseline test to measure the raw request-handling speed of FastAPI.
@@ -9,7 +9,6 @@ To measure the backend's performance under stress, load tests were conducted usi
 Endpoints interacting with the Supabase cloud \acs{api} were not tested due to bandwidth limitations. The results, summarized in Table~\ref{TAB:API_LOAD_TEST}, demonstrate that the backend is highly performant, capable of handling thousands of transactions per second with an average response time in the single-digit milliseconds.
 
 \begin{table}[Load Test Results]{TAB:API_LOAD_TEST}{\acs{api} Load Test Results (10 concurrent users over 30s).}
-    \centering
     \begin{tabular}{l r r r}
         \hline
         \textbf{Metric} & \textbf{Root (\texttt{/})} & \textbf{Ollama Proxy} & \textbf{FalkorDB Query} \\

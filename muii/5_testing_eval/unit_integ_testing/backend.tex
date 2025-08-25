@@ -1,8 +1,15 @@
-The backend's business logic, which encompasses data processing, recommendation generation, and conversational state management, was thoroughly evaluated with unit tests to ensure its reliability. Excerpts of each test are provided in Appendix~\ref{AP:BACKEND_TESTS}.
+The backend's domain logic, which encompasses data processing, recommendation generation, and conversational state management, was thoroughly evaluated with unit and integration tests to ensure its reliability, developed and tested using the \texttt{pytest} library \cite{PYTEST}. Excerpts of each test are provided in Appendix~\ref{AP:BACKEND_TESTS}.
 
-% TODO Reference each script with code snippet
-The data processing pipeline, implemented in \texttt{data\_utils.py}, was validated through \\ \texttt{test\_data\_utils.py}. These tests confirm the correctness of the \acs{llm}-based inference for identifying column roles and data types, ensuring the automated data preparation is robust.
+\paragraph{Unit Tests}
 
-The core recommendation logic was tested in \texttt{test\_falkordb\_recommender.py}. Using a \texttt{pytest} fixture, a temporary mock dataset is created to test the \texttt{FalkorDBRecommender} class. The test suite validates the entire lifecycle, including data ingestion, graph creation, and the output of the different recommendation methods (context-aware, collaborative filtering, and hybrid recommendations), and the generation of explanations.
+The data processing pipeline, implemented in a utility module, was validated through \\ \texttt{test\_data\_utils.py} (Code~\ref{COD:TEST_DATA_UTILS}). These tests confirm the correctness of the \acs{llm}-based inference for identifying column roles and data types, ensuring the automated data preparation is robust.
 
-Finally, the stateful components of the conversational workflow were validated. The \\ \texttt{test\_user\_profile.py} script tests the \texttt{UserProfile} class for managing user preferences mid-conversation, while \texttt{test\_falkordb\_chat\_history.py} ensures the reliable persistence of conversation logs in the graph database.
+The core recommendation logic was tested in \texttt{test\_falkordb\_recommender.py} (Codes~\ref{COD:TEST_FDB_RECOMMENDER_1}, \ref{COD:TEST_FDB_RECOMMENDER_2} \& \ref{COD:TEST_FDB_RECOMMENDER_3}). Using a \texttt{pytest} fixture, a temporary mock dataset is created to test the \texttt{FalkorDBRecommender} class. The test suite validates the entire lifecycle, including data ingestion, graph creation, and the output of the different recommendation methods (context-aware, collaborative filtering, and hybrid recommendations), and the generation of explanations.
+
+Finally, the stateful components of the conversational workflow were validated. The \\ \texttt{test\_user\_profile.py} (Codes~\ref{COD:TEST_USER_PROFILE_1} \& \ref{COD:TEST_USER_PROFILE_2}) script tests the \texttt{UserProfile} class for managing user preferences mid-conversation, while \texttt{test\_falkordb\_chat\_history.py} (Code \ref{COD:TEST_FDB_CHAT_HISTORY}) ensures the reliable persistence of conversation logs in the graph database.
+
+\paragraph{Integration Tests}
+
+To validate the \acs{api} layer, integration tests were written using FastAPI's \texttt{TestClient}, which simulates HTTP requests to the application without needing to run a live server. The tests, located in \texttt{test\_api.py} (Codes~\ref{COD:TEST_API_1} \& \ref{COD:TEST_API_2}), use the \texttt{pytest-mock} library to isolate the \acs{api} from its downstream dependencies.
+
+This mocking strategy is essential for focused testing. For example, in \texttt{test\_create\_agent}, all backend logic---including calls to Supabase, FalkorDB, and the RecBole training functions---is mocked. This allows the test to verify that the \texttt{/create-agent} endpoint correctly handles multipart form data, parses the request body, and calls the appropriate backend functions, without executing the time-consuming processes of data ingestion and model training. Similarly, the \acs{jwt} authentication middleware is mocked in all tests to bypass token validation, allowing the focus to remain on the endpoint's logic.

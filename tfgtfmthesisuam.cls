@@ -2217,7 +2217,17 @@
 	\end{codefloat}
 }
 
-
+\lstdefinelanguage{Cypher}{
+  keywords={MATCH, OPTIONAL, WHERE, RETURN, WITH, ORDER, BY, LIMIT, SKIP, AS, DISTINCT, 
+            CREATE, DELETE, DETACH, REMOVE, SET, MERGE, CALL, YIELD, UNION, ALL, USING, 
+			INDEX, CONSTRAINT, ON, AND, OR, NOT, IN, CASE, WHEN, THEN, ELSE, END, DESC,
+			ASC, CONTAINS},
+  sensitive=true,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]"
+}
 
 \newcommand{\Code}[8][]{\@allcodes[#1]{#2}{#3}{#4}{#5}{#6}{#7}{#8}}
 \newcommand{\AdaCode}[7][]{\@allcodes[#1]{#2}{#3}{#4}{#5}{#6}{#7}{Ada}}
@@ -2246,6 +2256,7 @@
 \newcommand{\SQLCode}[7][]{\@allcodes[#1]{#2}{#3}{#4}{#5}{#6}{#7}{SQL}}
 \newcommand{\VHDLCode}[7][]{\@allcodes[#1]{#2}{#3}{#4}{#5}{#6}{#7}{VHDL}}
 \newcommand{\XMLCode}[7][]{\@allcodes[#1]{#2}{#3}{#4}{#5}{#6}{#7}{XML}}
+\newcommand{\CypherCode}[7][]{\@allcodes[#1]{#2}{#3}{#4}{#5}{#6}{#7}{Cypher}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
