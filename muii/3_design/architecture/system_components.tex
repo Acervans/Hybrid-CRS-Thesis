@@ -2,7 +2,7 @@ The primary components of the system are:
 \begin{compactitem}[\textbullet]
     \item \textbf{Frontend Application:} A client-side \ac{pwa} built with Next.js, which serves as the sole point of interaction for the end-user. It is responsible for rendering the entire user interface and managing client-side state.
     \item \textbf{Backend \acs{api}:} A central, high-performance \acs{api} developed in FastAPI. This component acts as an orchestrator, handling all domain logic, user authentication, and routing requests to the appropriate downstream services.
-    \item \textbf{LLM Service:} A dedicated container running Ollama, responsible for hosting, managing, and serving inferences from the open-source \acp{llm}.
+    \item \textbf{\acs{llm} Service:} A dedicated container running Ollama, responsible for hosting, managing, and serving inferences from the open-source \acp{llm}.
     \item \textbf{Data Services:} A hybrid solution with two data storage services, consisting of a Supabase \cite{SUPABASE} PostgreSQL instance for structured metadata, and a FalkorDB graph database (NoSQL) for storing and querying both user-item interaction data and chat history records.
 \end{compactitem}
 

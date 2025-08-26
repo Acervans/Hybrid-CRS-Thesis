@@ -7,7 +7,7 @@ The backend exposes a comprehensive RESTful \acs{api} using FastAPI. Request and
 
     \item[Chat History Management:] To manage chat histories, a set of endpoints were implemented. The \texttt{/create-chat-history}, \texttt{/get-chat-history}, \texttt{/append-chat-history}, and \\ \texttt{/delete-chat-history} endpoints handle the creation, retrieval, updating, and deletion of conversation logs, respectively.
 
-    \item[LLM Proxy:] A general-purpose proxy endpoint, \texttt{/ollama/api/\{endpoint\}}, securely forwards requests to the Ollama server. This allows the frontend to interact with the \ac{llm} (e.g., to list available models or pull new ones) without exposing the Ollama service directly. It also intercepts chat requests to inject context from web search, by using the DDGS metasearch library \cite{DDGS-SEARCH}.
+    \item[\acs{llm} Proxy:] A general-purpose proxy endpoint, \texttt{/ollama/api/\{endpoint\}}, securely forwards requests to the Ollama server. This allows the frontend to interact with the \ac{llm} (e.g., to list available models or pull new ones) without exposing the Ollama service directly. It also intercepts chat requests to inject context from web search, by using the DDGS metasearch library \cite{DDGS-SEARCH}.
 
     \item[Data Utilities:] Helper endpoints like \texttt{/infer-column-roles} and \texttt{/pdf-to-text} provide utility functions to the frontend, offloading tasks like \ac{llm}-based inference or file parsing with PyMuPDF \cite{PYMUPDF} to the backend.
 \end{description}
