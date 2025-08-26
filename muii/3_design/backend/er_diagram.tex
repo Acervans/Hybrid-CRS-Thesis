@@ -1,6 +1,6 @@
-The platform's primary metadata, user information, and agent configurations are stored in a relational database managed by Supabase, which runs on PostgreSQL. The logical structure of this database is represented by the physical Entity-Relationship (ER) diagram shown in Figure~\ref{FIG:ER_DIAGRAM}. This schema is designed to efficiently store and retrieve information about users, the agents they create, and their conversation histories, while also implementing specific workarounds for the platform's real-time features.
+The platform's primary metadata, user information, and agent configurations are stored in a relational database managed by Supabase, which runs on PostgreSQL. The logical structure of this database is represented by the physical \ac{er} diagram shown in Figure~\ref{FIG:ER_DIAGRAM}. This schema is designed to efficiently store and retrieve information about users, the agents they create, and their conversation histories, while also implementing specific workarounds for the platform's real-time features.
 
-\begin{figure}[Physical ER Diagram]{FIG:ER_DIAGRAM}{Physical ER Diagram for the metadata database.}
+\begin{figure}[Entity-Relationship Diagram]{FIG:ER_DIAGRAM}{\ac{er} Diagram for the Metadata Database.}
     \includegraphics[width=0.9\textwidth]{er_diagram.pdf}
 \end{figure}
 
