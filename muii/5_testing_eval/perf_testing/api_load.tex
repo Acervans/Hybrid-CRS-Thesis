@@ -8,7 +8,7 @@ To measure the backend's performance under stress, load tests were conducted usi
 
 Endpoints interacting with the Supabase cloud \acs{api} were not tested due to bandwidth limitations. The results, summarized in Table~\ref{TAB:API_LOAD_TEST}, demonstrate that the backend is highly performant, capable of handling thousands of transactions per second with an average response time in the single-digit milliseconds.
 
-\begin{table}[Load Test Results]{TAB:API_LOAD_TEST}{\acs{api} Load Test Results (10 concurrent users over 30s).}
+\begin{table}[Load Test Results]{TAB:API_LOAD_TEST}{\acs{api} Load test results (10 concurrent users over 30s).}
     \begin{tabular}{l r r r}
         \hline
         \textbf{Metric} & \textbf{Root (\texttt{/})} & \textbf{Ollama Proxy} & \textbf{FalkorDB Query} \\
