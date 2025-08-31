@@ -1,0 +1,3 @@
+To address the first part of \textbf{RQ2} concerning contextual recommendations, particularly in cold-start scenarios, the framework employs a strategy analogous to Graph-\ac{rag}. The system's \ac{kg}, built and managed by \texttt{FalkorDB}, serves as a rich, structured source for real-time retrieval.
+
+When the conversational agent determines that a contextual recommendation is needed, it executes Cypher queries against the dataset's graph to find relevant items based on the immediate conversational context (e.g., item attributes mentioned by the user). It can perform content-based filtering by finding items with matching properties or \acl{cf} by identifying items liked by similar users, even with minimal interaction data.

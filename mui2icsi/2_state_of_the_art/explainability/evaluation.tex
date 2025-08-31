@@ -1,0 +1,22 @@
+Evaluating the quality of an explanation is a multi-faceted and complex challenge. An explanation must be not only factually correct but also understandable, persuasive, and useful to the end-user. The evaluation of \ac{xai} methods can be broadly categorized into offline (or proxy) evaluation and online (or human-grounded) evaluation \cite{SOTA-EXP-EVALUATION}.
+
+\paragraph{Offline (Proxy) Evaluation}
+Offline evaluation uses algorithmic metrics to assess the properties of an explanation without direct human involvement, serving as proxies for explanation quality. Prominent offline metrics include:
+\begin{compactitem}[\textbullet]
+    \item \textbf{Fidelity:} This measures how accurately an explanation reflects the underlying model's reasoning process. For a post-hoc explainer, fidelity assesses how well it mimics the behavior of the original black-box model.
+    \item \textbf{Consistency / Stability:} This evaluates whether the explainer produces similar explanations for similar models or inputs. A stable explainer should not generate wildly different explanations for minor changes in the input data.
+    \item \textbf{Faithfulness:} A highly sought-after property, faithfulness measures the causal link between the explanation and the model's prediction. For counterfactual explanations, for example, metrics like \textbf{Probability of Necessity} (``is the feature necessary for the outcome?'') and \textbf{Probability of Sufficiency} (``is the feature sufficient to cause the outcome?'') can quantitatively measure the causal strength of an explanation.
+\end{compactitem}
+
+The development of specialized datasets, such as \texttt{E-ReDial} \cite{SOTA-EXPLAIN-CRS}, which contains thousands of high-quality, human-annotated explanations, is also a crucial step towards creating standardized benchmarks for training and evaluating explainable systems offline.
+
+\paragraph{Online (Human-Grounded) Evaluation}
+While offline metrics are useful for technical validation, the ultimate goal of an explanation is to be useful to a human. Human-grounded evaluation, conducted through user studies, is therefore considered the gold standard for assessing explanation quality. These studies measure a range of user-centric dimensions, including:
+\begin{compactitem}[\textbullet]
+    \item \textbf{Transparency:} How clearly the user understood \textit{why} the system provided a specific output.
+    \item \textbf{Satisfaction:} The user's overall satisfaction with the combination of the system's output and the explanations received.
+    \item \textbf{Trust \& Persuasiveness:} Whether the explanation increased the user's trust and confidence in the system's suggestions.
+    \item \textbf{Cognitive Load:} How mentally demanding the explanations were to read and understand.
+\end{compactitem}
+
+The experimental methodology of this thesis is firmly rooted in this human-grounded paradigm, using qualitative ratings and the standardized \ac{sus} questionnaire to directly measure these user-centric aspects of the generated explanations.

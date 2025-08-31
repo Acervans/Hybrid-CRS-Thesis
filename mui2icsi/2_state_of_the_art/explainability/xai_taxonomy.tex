@@ -1,0 +1,17 @@
+The field of \ac{xai} encompasses a wide variety of techniques. To better understand their applicability and limitations, a formal taxonomy is often used to classify them along several dimensions. A widely accepted classification is based on the \textbf{scope} of the explanation and the \textbf{timing} at which the explanation is generated relative to the model's training \cite{SOTA-XAI-SURVEY}.
+
+\paragraph{Scope of the Explanation}
+This dimension describes whether an explanation pertains to a single decision or the model as a whole.
+\begin{compactitem}[\textbullet]
+    \item \textbf{Global Explanations:} A global explanation aims to make the entire logic of a model understandable. It describes the model's general behavior across all possible inputs, for example, by identifying the most influential features on average. While useful for model developers and auditors, this scope is often too general to be helpful to an end-user of an \ac{rs}.
+    \item \textbf{Local Explanations:} A local explanation, in contrast, is focused on a single, specific prediction. In the context of \acp{rs}, this means explaining why one particular item was recommended to one particular user at a specific point in time. This is the most relevant scope for this thesis, as the goal is to provide justifications for individual recommendations to build user trust.
+\end{compactitem}
+
+\paragraph{Timing of the Explanation}
+This dimension distinguishes between models that are transparent by design and those that require an external method to be explained after the fact.
+\begin{compactitem}[\textbullet]
+    \item \textbf{Ante-hoc (Intrinsic) Explainability:} This refers to the use of models that are considered inherently interpretable or ``white-box'' by design. Examples include linear regression, simple decision trees, and rule-based systems where the decision-making process is directly inspectable. These models often involve a trade-off, sacrificing some predictive accuracy for a higher degree of transparency \cite{SOTA-EXP-EVALUATION}.
+    \item \textbf{Post-hoc Explainability:} This is the most common approach for complex, high-performance models (e.g., deep neural networks) that are considered ``black-boxes''. A post-hoc method is a separate technique that is applied after a model has been trained. It analyzes the model's inputs and outputs to generate an explanation for its behavior without modifying the model itself. Nearly all of the advanced methods discussed in this chapter, such as graph-based reasoning and counterfactual explanations, are post-hoc techniques.
+\end{compactitem}
+
+In this thesis, a post-hoc approach is adopted to generate local explanations for individual recommendations. The explanations are derived from a hybrid model that combines graph-based reasoning with \ac{llm} inference, allowing for a transparent justification of the system's recommendations.

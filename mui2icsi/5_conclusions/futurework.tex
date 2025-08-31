@@ -1,9 +1,21 @@
-With reference to the topics discussed in this project, several aspects may be addressed hereafter. To begin with, all the tested recommendation models could be enhanced with exhaustive hyperparameter tuning, indispensable to achieve optimal results; and newer models or libraries could be explored to diversify the scope and types of recommendation algorithms.
+While the current platform provides a robust and functional foundation, the research opens up numerous avenues for future investigation and development. The following points outline potential directions for extending this work.
 
-To obtain real feedback, testing with external, real-world users could also be conducted, both on the performance and accuracy of the models, as well as the user experience of the developed web application.
+\begin{compactitem}[\textbullet]
+    \item \textbf{Methodological Enhancements:}
+    \begin{compactenum}
+        \item \textbf{Advanced User Modeling:} The current user profile is session-based. Future work could explore methods for building persistent, long-term user profiles that evolve across multiple conversations, potentially capturing preference drift and incorporating a wider array of user and interaction features.
+        \item \textbf{Dialogue Policy Optimization:} A significant advancement would be to incorporate Reinforcement Learning (RL) to train a specific dialogue policy. This would allow the agent to learn the optimal strategy for when to ask questions versus when to recommend, with the goal of maximizing long-term user satisfaction.
+        \item \textbf{Testing with Advanced Expert Models:} The current system uses \texttt{EASER} as its expert model. Future research could evaluate the integration of other, more complex models, particularly context-aware recommenders that could more dynamically leverage the state of the conversational user profile.
+        \item \textbf{Expanded Agent Toolset:} The agent's capabilities could be broadened by providing it with a larger set of tools. This could include functions for more complex multi-modal interactions, deeper data analysis, or integrations with external knowledge sources beyond simple web search.
+        \item \textbf{Multilingual Capabilities:} Currently, the conversational workflow operates mainly in English. An interesting research direction would be to explore the development of multilingual agents. This would involve evaluating the performance of multilingual \acp{llm} and adapting the prompt engineering and user profiling techniques to handle cross-lingual conversations and recommendations.
+    \end{compactenum}
 
-Regarding the scraped dataset, a suggestion would be making it dynamic by allowing the addition of new users, which entails retraining the models. For this, the project might delve into the use of distributed or parallel computing with technologies like Spark, Hadoop, containerized environments or cloud services for efficient model deployment.
+    \item \textbf{Evaluation \& Experiments:}
+    \begin{compactenum}
+        \item \textbf{Quantitative Offline Evaluation:} A critical next step is to conduct a large-scale offline evaluation of the hybrid recommendation strategy using standard accuracy metrics (e.g., NDCG@k, Recall@k) to quantitatively benchmark its performance.
+        \item \textbf{Evaluation with Larger Language Models:} The experiments in this thesis were conducted with a moderately-sized local \ac{llm}. Re-running the user studies with more powerful models, either larger open-source models on more capable hardware or proprietary models via an \ac{api} (e.g., \acs{gpt}-5), would provide valuable insights into how model scale impacts the quality of conversation, recommendations, and explanations.
+        \item \textbf{Diverse User Studies:} To validate the findings of the initial usability study, future experiments should be conducted with a larger and more demographically diverse group of participants.
+    \end{compactenum}
 
-To evaluate the sentiment analyzer, formal accuracy testing would be an option to assess its real efficacy, and alternative sources for extracting sentiment attributes, such as lyrics from tracks, could be considered to achieve more representative and subjective text for sentiment analysis.
-
-Last but not least, future research shall focus on broadening the understanding of \acs{vad} or different sentiment models, aiming to refine sentiment analysis in music recommendation or other domains, and potentially uncovering novel insights for the coming years.
+    \item \textbf{User Feedback:} The constructive feedback from the usability study provides a clear roadmap for UI improvements, such as adding an onboarding tutorial for agent creation and providing explicit labels that indicate the source of a given recommendation.
+\end{compactitem}

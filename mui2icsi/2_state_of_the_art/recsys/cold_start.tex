@@ -1,0 +1,10 @@
+A fundamental and persistent challenge for \aclp{rs}, particularly those based on \acl{cf}, is the \textbf{cold-start problem}. This issue arises when the system lacks sufficient historical interaction data to make reliable inferences. It manifests in two primary forms:
+
+\begin{compactitem}[\textbullet]
+    \item \textbf{User Cold-Start:} This occurs when a new user joins the system. Without any past ratings or interactions, the \acs{cf} model has no data upon which to base a personalized recommendation, rendering it effectively blind to the user's preferences.
+    \item \textbf{Item Cold-Start:} This occurs when a new item is added to the catalog. Until the item has been rated by a sufficient number of users, the system cannot recommend it to others based on collaborative patterns, hindering the discovery of new content.
+\end{compactitem}
+
+Various strategies have been developed to mitigate the cold-start problem in traditional \acp{rs}. A common approach is to employ a \textbf{hybrid model} that falls back on content-based features. For a new item, its metadata (e.g., genre, author) can be used to recommend it to users who have liked similar items. For a new user, demographic information or a simple onboarding process that asks them to select a few interests can be used to build an initial profile. More advanced techniques include incremental learning models like incremental \acp{fm} \cite{COLD-START-INCREMENTAL-FM} or Dynamic \texttt{EASER} \cite{COLD-START-DYN-EASER}, which can adapt to new data without full retraining, and graph-based reasoning to infer preferences for cold-start users \cite{SOTA-GRAPH-REASONING-COLD-START}.
+
+While these methods provide partial solutions, the conversational paradigm offers a more direct and natural resolution to the user cold-start problem. Instead of relying on proxy information, a \ac{crs} can simply ask a new user about their preferences, mirroring how a human expert would begin a recommendation dialogue. This ability to actively elicit preferences makes conversational systems well-suited to overcoming one of the longest-standing challenges in the field of \aclp{rs}.

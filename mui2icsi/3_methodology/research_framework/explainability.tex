@@ -1,0 +1,15 @@
+The methodology for generating explanations, addressing \textbf{RQ3}, forms a central component of the research framework. It is designed as a neuro-symbolic, two-stage approach that integrates the structured reasoning capabilities of a \ac{kg} with the generative fluency of an \ac{llm}, ensuring that explanations are both causally faithful and accessible to end users.
+
+\paragraph{Stage 1: Symbolic Evidence Retrieval}
+In the first stage, the system queries the \ac{kg} to identify human-interpretable reasoning paths linking a user to a recommended item. Evidence is retrieved hierarchically according to the following principles:
+
+\begin{compactitem}[\textbullet]
+\item \textbf{Content-based:} Identifies shared attributes between the recommended item and items previously preferred by the user. This supports explanations such as: ``...because you enjoyed other items in the same category''.
+\item \textbf{Collaborative:} Detects \texttt{User–Item–User–Item} paths to leverage preferences of similar users, enabling explanations like: ``...because other users with similar tastes also liked this''.
+\item \textbf{Popularity:} As a fallback, global metrics (e.g., average rating, number of interactions) are retrieved to provide general evidence: ``...because it is generally well-received''.
+\end{compactitem}
+
+\paragraph{Stage 2: Natural Language Synthesis}
+The retrieved symbolic evidence is compiled into a structured prompt for the \ac{llm}, which synthesizes it into a coherent, fluent explanation. This combination ensures that the resulting explanations are grounded in actual evidence while remaining persuasive and natural.
+
+By design, this method functions as a post-hoc, model-agnostic local \textit{explanation engine}, producing plausible, data-grounded justifications even for black-box recommenders \cite{SOTA-RECSYS-EXPLAIN-KG, SOTA-MODEL-AGNOSTIC-GRAPH-EXPLANATIONS}.

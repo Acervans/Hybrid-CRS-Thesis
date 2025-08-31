@@ -1,0 +1,91 @@
+The selection of an appropriate \ac{llm} is a paramount decision for useful and effective conversational agents. The chosen model must not only demonstrate strong general language understanding and generation capabilities, but also excel at the specific task of Function Calling, which is central to the proposed architecture. For this objective, \ac{llm} evaluation is crucial, as it provides insights into the model's performance across various benchmarks and metrics.
+
+\paragraph{General Evaluation Metrics}
+
+The general performance of open-source \acp{llm} is displayed on the Open \acs{llm} Leaderboard~\cite{OPEN-LLM-LEADERBOARD}, a platform hosted by HuggingFace that ranks models on a variety of benchmarks (archived since March 13th 2025). The leaderboard employed various common metrics used to evaluate \acp{llm} on standard benchmarks, including:
+
+\begin{compactitem}[\textbullet]    
+    \item \textbf{Instruction-Following Evaluation (IFEval):} Evaluates the model's ability to follow explicit formatting instructions, including instruction following, formatting, and generation. Scoring is based on whether the required format was strictly followed (accuracy).
+    
+    \item \textbf{Big Bench Hard (BBH):} A suite of difficult tasks across multiple domains such as reasoning and world knowledge. Scoring is based on whether the correct answer was chosen (accuracy).
+    
+    \item \textbf{Mathematics Aptitude Test of Heuristics (MATH):} Focuses on advanced high school math problems, including algebra, geometry, and calculus. Scoring is based on exact match to the correct answer.
+    
+    \item \textbf{Graduate-Level Google-Proof Q\&A (GPQA):} Multiple-choice questions requiring PhD-level knowledge in science (biology, chemistry, physics). Scoring is based on accuracy.
+    
+    \item \textbf{Multistep Soft Reasoning (MuSR):} Tests reasoning over long contexts with emphasis on comprehension and logic. Accuracy is used as the scoring metric.
+    
+    \item \textbf{Massive Multitask Language Understanding – Professional (MMLU-Pro):} Covers expert-reviewed questions across domains like medicine, law, engineering, and more. Scoring is based on accuracy.
+
+    \item \textbf{Carbon Dioxide Emissions (CO\textsubscript{2} Cost):} Reflects the environmental impact of model inference in kilograms of CO\textsubscript{2}, considering data center location and energy mix.
+\end{compactitem}
+
+\paragraph{Function Calling Performance Metrics}
+
+More critical to this thesis is the model's ability to perform Function Calling. The \ac{bfcl}~\cite{BFCL} is a specialized benchmark designed to evaluate this specific capability in \acp{llm}. To provide a granular understanding of a model's function-calling prowess, the \ac{bfcl} utilizes several metrics, each targeting a different facet of the task.
+
+\begin{compactitem}[\textbullet]
+    \item \textbf{Overall Accuracy:} This metric represents the unweighted average accuracy across all sub-categories of the \ac{bfcl} benchmark. It provides a high-level summary of the model's general function-calling ability, balancing its performance across simple, multiple, parallel, and relevance-detection tasks.
+
+    \item \textbf{Abstract Syntax Tree (AST) Evaluation:} This method focuses on the structural and syntactical correctness of the generated function call. The process involves parsing the model's output into an AST, which is a tree representation of the source code's abstract syntactic structure. The evaluation then meticulously checks for several criteria:
+    \begin{compactitem}[$\circ$]
+        \item \textbf{Function Name Matching:} Verifies that the name of the function called by the model matches the expected function name in the ground truth answer.
+        \item \textbf{Parameter Matching:} Ensures that all required parameters are present in the model's output and that no extraneous, or ``hallucinated'', parameters are included.
+        \item \textbf{Type \& Value Adherence:} Strictly checks that the data types and values of the provided arguments match the function's definition. For instance, while Python might auto-convert an integer to a float, this is not permissible for other languages like Java or JavaScript in the evaluation unless explicitly allowed. For lists and tuples, the order of elements must match exactly.
+    \end{compactitem}
+
+    \item \textbf{Single-Turn AST Accuracy (Live and Non-live):} This measures the model's ability to correctly generate a function call in a single interaction (one user query, one model response).
+    \begin{compactitem}[$\circ$]
+        \item \textbf{Non-live Accuracy} refers to the static AST evaluation where the syntactic correctness of the function name, parameters, and types is checked against a predefined set of answers without executing the code.
+        \item \textbf{Live Accuracy} goes a step further by executing the generated function call. This is used for tests involving real-world \acp{api} (e.g., REST \acp{api}) to verify that the call is not only syntactically correct but also functional and produces the expected outcome.
+    \end{compactitem}
+
+    \item \textbf{Multi-turn Accuracy:} Introduced in \ac{bfcl} V3, this metric evaluates a model's performance in more complex, conversational scenarios that require multiple back-and-forth exchanges to complete a task. Instead of just checking the final function call, this evaluation uses a state-based approach, verifying the actual state of the system (e.g., a file system or booking system) after the model executes its functions. This assesses a model's ability to handle complex workflows, manage context over several turns, and reason about sequential actions. The evaluation includes challenging sub-tasks such as identifying missing parameters and asking clarifying questions, or recognizing when a necessary tool is not available.
+
+    \item \textbf{Relevance and Irrelevance (Hallucination Measurement):} A crucial aspect of a reliable agent is knowing when \textit{not} to call a function. These metrics evaluate a model's ability to avoid hallucination, which in this context means generating a function call when none of the provided tools are appropriate for the user's query.
+    \begin{compactitem}[$\circ$]
+        \item \textbf{Relevance Detection:} This measures the model's ability to correctly identify and invoke a relevant function when one is provided among the available tools.
+        \item \textbf{Irrelevance Detection:} This specifically tests the model's resilience to hallucination. In these scenarios, none of the provided functions are suitable for the user's request. A correct response is to invoke no function call. This metric is useful for determining if a model will incorrectly generate a function call despite lacking the proper tools or information.
+    \end{compactitem}
+\end{compactitem}
+
+\paragraph{Qwen2.5 3B Evaluation}
+
+For this project, the Qwen2.5 model of 3 billion parameters, quantized during post-training, was utilized \cite{QWEN}. A key factor in its selection was its 32K token context window, which is the maximum number of combined input and output tokens the \ac{llm} can process. While output tokens often have a lower limit that varies by model, Qwen2.5's window provides ample capacity for the conversational context and retrieves enough information for the scope of this project, a conclusion reached after preliminary testing. This model size also proved to be optimal for the available 4GB \ac{gpu}, allowing it to run entirely on VRAM.
+
+In terms of general performance, the largest version, Qwen2.5 with 72 billion parameters, ranks impressively at 6th out of 4576 models. Impressively, the 3 billion parameter version used in this project also holds a respectable position at approximately 1300, placing it in the top 28\%. This strong showing, especially considering its smaller size, indicates a high level of general capability. General performance metrics for Qwen2.5 3B are summarized in Table~\ref{TAB:QWEN_GEN_METRICS}.
+\begin{table}[General Evaluation Metrics for Qwen2.5 3B]{TAB:QWEN_GEN_METRICS}{General evaluation metrics for Qwen2.5 3B.}
+    \begin{tabular}{l c}
+        \hline
+        \textbf{Metric} & \textbf{Score} \\
+        \hline
+        Average & 27.16\% \\
+        IFEval & 64.75\% \\
+        BBH & 25.80\% \\
+        MATH & 36.78\% \\
+        GPQA & 3.02\% \\
+        MuSR & 7.57\% \\
+        MMLU-Pro & 25.05\% \\
+        CO\textsubscript{2} Cost & 2.78 kg \\
+        \hline
+    \end{tabular}
+\end{table}
+
+In terms of Function Calling performance, on the \ac{bfcl} as of June 18th, 2025\footnote[1]{\emph{BFCL V3}. \url{https://web.archive.org/web/20250618114222/https://gorilla.cs.berkeley.edu/leaderboard.html}}, the 72B Qwen2.5 model was ranked in the top 20 out of 121 models, with most of the higher-ranking models being closed-source. The 3B variant of Qwen2.5, the model used in this research, was ranked 81 out of 121, making it one of the top performers among similarly-sized models. The performance of Qwen2.5 3B on the \ac{bfcl} Function Calling metrics is detailed in Table~\ref{TAB:QWEN_BFCL_METRICS}.
+\begin{table}[Function Calling Evaluation Metrics for Qwen2.5 3B]{TAB:QWEN_BFCL_METRICS}{Function Calling evaluation metrics for Qwen2.5 3B.}
+    \begin{tabular}{l c}
+        \hline
+        \textbf{Metric} & \textbf{Score} \\
+        \hline
+        Overall Accuracy & 50.37 \\
+        Mean Latency & 4.3s \\
+        Non-live (AST) & 78.83 \\
+        Live (AST) & 69.39 \\
+        Multi-turn Accuracy & 6 \\
+        Relevance & 88.89 \\
+        Irrelevance & 64.26 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Other models of a similar size were evaluated, but they exhibited inferior performance in Function Calling accuracy. Consequently, Qwen2.5 3B was selected as the most suitable model for this project, balancing strong Function Calling capabilities with manageable computational requirements.

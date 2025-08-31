@@ -1,0 +1,46 @@
+Evaluating the performance of a recommendation model is a paramount step in the research and development process. The methodology is typically divided into two main paradigms: offline evaluation, which uses historical data to measure predictive accuracy, and online evaluation, which assesses the model's impact on user behavior in a live system \cite{CHAPTER:RS-HANDBOOK-EVALUATION}.
+
+\paragraph{Offline Evaluation}
+Offline evaluation is the most common approach in academic research due to its low cost and reproducibility. The protocol involves splitting a historical dataset of user-item interactions into training, validation, and test sets. The model is trained on the former, assessed on the second, and its final performance is measured by its ability to predict the held-out interactions in the test set. The metrics used depend on the specific recommendation task. For rating prediction tasks, accuracy is measured using metrics like \ac{mae} and \ac{rmse}.
+
+For the more common top-N ranking task, the goal is to measure the accuracy of the recommended list. Common metrics include Precision [\ref{EQ:PRECISION}], Recall [\ref{EQ:RECALL}] and F1-Score [\ref{EQ:F1_SCORE}]:
+\begin{multicols}{2}
+    \begin{subequations}
+        \begin{equation}[EQ:PRECISION]{Precision@k}
+            P@k=\frac{\lvert Relevant \cap Returned_k \rvert}{k}
+        \end{equation}
+        \begin{equation}[EQ:RECALL]{Recall@k}
+            R@k=\frac{\lvert Relevant \cap Returned_k \rvert}{\lvert Relevant \rvert}
+        \end{equation}
+        \begin{equation}[EQ:F1_SCORE]{F1-Score@k}
+            F_1@k=\frac{2 \cdot P@k \cdot R@k}{P@k + R@k}
+        \end{equation}
+    \end{subequations}
+\end{multicols}
+While Precision and Recall measure the accuracy of the recommendation set, they do not account for the ranking of the items within that set. Rank-aware metrics, such as \ac{ndcg} [\ref{EQ:NDCG}], address this by assigning higher importance to relevant items that appear at the top of the list. It considers both the relevance and the rank of recommended items, and stems from the normalization of the \ac{dcg} [\ref{EQ:DCG}], with the ideally ordered \acs{dcg} or \acs{idcg} [\ref{EQ:IDCG}]. Higher scores are assigned to relevant items that are ranked higher in the recommendation list, applying a discount based on the position in the list.
+
+\begin{multicols}{2}
+    \begin{subequations}
+        \begin{equation}[EQ:DCG]{Discounted Cumulative Gain (DCG)}
+            DCG=\sum_{k=1}^{|Rel|}\frac{Relevance(d_k)}{\log_{2}(k + 1)}
+        \end{equation}
+        \begin{equation}[EQ:IDCG]{Ideal Discounted Cumulative Gain (IDCG)}
+            IDCG=DCG_{Ideal\;order}
+        \end{equation}
+        \begin{equation}[EQ:NDCG]{Normalized Discounted Cumulative Gain (NDCG)}
+            NDCG=\frac{DCG}{IDCG} \in [0, 1]
+        \end{equation}
+    \end{subequations}
+\end{multicols}
+Here, ${Relevance(d_k)}$ is the relevance of the item at position $k$, and \acs{idcg} is the ideal \acs{dcg} score for a perfect ranking.
+
+Beyond accuracy, other important offline metrics include \textbf{coverage} (the proportion of items the system can recommend), \textbf{diversity} (how different the recommended items are from each other), and \textbf{novelty} (the ability to recommend new or unexpected items). Although these offline metrics are the standard for quantitative model comparison, this thesis focuses on a qualitative, user-centric evaluation through usability testing, as the primary research questions are related to the interactive experience and user perception.
+
+\paragraph{Online Evaluation}
+Online evaluation, typically conducted through A/B testing or user studies, is frequently used for measuring the real-world impact of an \ac{rs}. In this method, one or more user groups are exposed to a system, and their behavior is monitored and analyzed. This approach allows for the measurement of important business metrics and user experience indicators, such as:
+\begin{compactitem}[\textbullet]
+    \item \textbf{Click-Through Rate (CTR):} The proportion of recommended items that users click on.
+    \item \textbf{Conversion Rate:} The proportion of recommendations that lead to a desired action (e.g., a purchase or a subscription).
+    \item \textbf{User Engagement and Satisfaction:} Measured through metrics like session duration, interaction frequency, or direct user feedback and surveys.
+\end{compactitem}
+While online evaluation provides the most practically valid results, its high cost, complexity, and slow iteration time mean that it is typically performed after a model has already been validated through offline experiments. This thesis focuses on a user-centric study that aligns with the principles of online evaluation by directly measuring user satisfaction and task success.

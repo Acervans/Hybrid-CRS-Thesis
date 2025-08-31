@@ -1,0 +1,8 @@
+To address \textbf{RQ1}, a dynamic user profile is constructed in memory for each conversational session. This profile serves as a short-term model of the user's current interests and constraints, and it is built and refined turn-by-turn throughout the dialogue.
+
+The profile is composed of two primary components:
+\begin{compactitem}[\textbullet]
+    \item \textbf{Contextual Preferences:} This is a structured dictionary that stores explicit constraints mentioned by the user. When a user expresses a preference related to an item's attributes (e.g., ``I'm looking for a comedy movie''), the \ac{llm} extracts these entities. The system then updates the profile with this information, such as by setting the desired value for a ``category'' feature.
+    \item \textbf{Item Preferences:} This component stores explicit feedback on items that have been presented to the user. When a user provides feedback (e.g., ``I liked the first one''), the \ac{llm} interprets infers a numerical rating (e.g., 5.0 for positive feedback), and logs this rating against the specific item identifier in the profile.
+\end{compactitem}
+This dynamic profile is the primary input for the recommendation-generation tools, ensuring that the suggestions are always aligned with the user's most recently expressed needs.
