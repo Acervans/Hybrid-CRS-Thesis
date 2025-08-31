@@ -1,4 +1,4 @@
-// Recommend items based on context, popularity, and authority.
+// Goal: Recommend items based on context, popularity, and authority.
 // Parameters:
 //   - User ID: 'user_A'
 //   - Item Properties (Context): category = 'Books', genre = 'Sci-Fi'
