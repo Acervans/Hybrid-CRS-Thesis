@@ -22,7 +22,7 @@ The process begins by translating the user's active contextual preferences into 
     \begin{equation}[EQ:BAYESIAN_AVERAGE]{Bayesian Average}
         \text{BayesianAverage} = \frac{v}{v+m} \cdot R + \frac{m}{v+m} \cdot C
     \end{equation}
-    Where $v$ is the number of ratings for the item, $R$ is the item's own average rating, $m$ is a minimum number of ratings required for confidence, and $C$ is the global average rating across all items.
+    \noindent where $v$ is the number of ratings for the item, $R$ is the item's own average rating, $m$ is a minimum number of ratings required for confidence, and $C$ is the global average rating across all items.
 
     \item \textbf{PageRank Score:} To measure the structural importance of an item within the user-item interaction graph, the PageRank algorithm \cite{PAGERANK} is precomputed for all items, as described in Equation~\ref{EQ:PAGERANK}.
 
@@ -30,7 +30,7 @@ The process begins by translating the user's active contextual preferences into 
     \begin{equation}[EQ:PAGERANK]{PageRank}
         PR_{i}={\frac  {1-d}{n}}+d\,\sum _{{j\in \{1,\dots ,n\}}}{\frac  {PR_{j}}{c_{j}}}
     \end{equation}
-    Where $PR_i$ is the PageRank score of item $i$, $n$ is the total number of items, $d$ is a damping factor (typically 0.85), and the sum is over all items $j$ that have a rating for item $i$, with $c_j$ being the total number of outgoing ratings from item $j$. The final ranked list of items represents a context-aware set of recommendations that can immediately respond to the user's needs.
+    \noindent where $PR_i$ is the PageRank score of item $i$, $n$ is the total number of items, $d$ is a damping factor (typically 0.85), and the sum is over all items $j$ that have a rating for item $i$, with $c_j$ being the total number of outgoing ratings from item $j$. The final ranked list of items represents a context-aware set of recommendations that can immediately respond to the user's needs.
 \end{compactitem}
 
 \paragraph{Hybrid Recommendations for Existing Users}

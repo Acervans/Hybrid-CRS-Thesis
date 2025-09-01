@@ -8,7 +8,7 @@ The system queries the \ac{kg} to identify human-interpretable reasoning paths l
     \item \textbf{Popularity signals:} If personal or collaborative evidence is insufficient, global metrics for the recommended item are retrieved, including the average rating and total number of interactions. This provides a fallback explanation based on general acceptance and quality.
 \end{compactitem}
 
-Representative queries and implementation details are provided in Appendix~\ref{AP:CYPHER_QUERIES}, Codes~\ref{COD:QUERY_3_1}, \ref{COD:QUERY_3_2} \& \ref{COD:QUERY_3_3}.
+Representative queries and implementation details are provided in Appendix~\ref{AP:CYPHER_QUERIES}, Codes~\ref{COD:QUERY_3_1}, \ref{COD:QUERY_3_2}, and \ref{COD:QUERY_3_3}.
 
 \paragraph{Stage 2: Natural Language Synthesis} Retrieved evidence is compiled into a structured prompt for the \ac{llm}. The model synthesizes all reasoning paths into a single, coherent explanation. This process ensures that the output is faithful to the retrieved evidence, integrating multiple evidence types into a cohesive, human-readable narrative, rather than producing generic or hallucinated statements.
 

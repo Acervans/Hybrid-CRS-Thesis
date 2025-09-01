@@ -6,4 +6,7 @@ All experiments and evaluations described in this chapter were conducted on a si
     \item \textbf{\acs{gpu}:} NVIDIA® GeForce® RTX 3050 Laptop \acs{gpu} with 4GB of VRAM
 \end{compactitem}
 
-The software environment was managed entirely through Docker Compose. The setup included a containerized Ollama service for hosting the \ac{llm}, a FalkorDB database, and a FastAPI backend. For the performance tests detailed in the complementary thesis, the backend was configured to run with 4 workers to fully utilize the hardware; however, for the user-facing experiments in this thesis, it was run with a single worker to accurately reflect the production deployment constraint.
+The software environment was managed entirely through Docker Compose. The setup included a containerized Ollama service for hosting the \ac{llm}, a FalkorDB database, and a FastAPI backend. For the performance tests detailed in the complementary thesis, % mejor poner una cita a la tesis, porque de hecho es la primera vez que se menciona (si se mencionara en la intro, como te digo en el correo, se entenderá mejor, ahora mismo esto viene de la nada, así que, mínimo, la cita)
+the backend was configured to run with 4 workers to fully utilize the hardware; however, for the 
+user-facing experiments, % esto suena raro, quizá mejor: "experiments interacting with real users"
+it was run with a single worker to accurately reflect the production deployment constraint.
