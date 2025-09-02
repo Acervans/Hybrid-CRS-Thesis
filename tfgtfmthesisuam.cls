@@ -3328,7 +3328,7 @@ coordinates {(#1,0) (#2,0)};
 
 \def\course
 {
-	\ifnum\month<8
+	\ifnum\month<10
 	  \begin{center}\mbox{}\\[2.5\@sbw]\prevyear\\[-0.037\paperwidth]\rule{0.5\textwidth}{0.002\paperheight}\\[-0.02\paperwidth]\actualyear\end{center}
 	\else
 	  \begin{center}\mbox{}\\[2.5\@sbw]\actualyear\\[-0.037\paperwidth]\rule{0.5\textwidth}{0.002\paperheight}\\[-0.02\paperwidth]\nextyear\end{center}

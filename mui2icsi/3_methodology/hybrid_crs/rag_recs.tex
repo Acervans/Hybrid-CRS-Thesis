@@ -1,4 +1,4 @@
-The system employs a hybrid recommendation strategy that adapts to the user's interaction history, integrating graph-based methods (akin to a Graph-\ac{rag} approach) with an expert model to provide relevant and diverse suggestions. This methodology addresses the complex nature of \textbf{RQ2} by combining contextual, collaborative, and deep learning-based signals. The overall procedure, illustrated in Figure~\ref{FIG:HYBRID_RECS}, begins by assessing the user's interaction history with the \texttt{FalkorDBRecommender} module, which is responsible for graph-based recommendations and explanations.
+The system employs a hybrid recommendation strategy that adapts to the user's interaction history, integrating graph-based methods (parallel to Graph-\ac{rag}) with an expert model to provide relevant and diverse suggestions. This methodology addresses the complex nature of \textbf{RQ2} by combining contextual, collaborative, and deep learning-based signals. The overall procedure, illustrated in Figure~\ref{FIG:HYBRID_RECS}, begins by assessing the user's interaction history with the \texttt{FalkorDBRecommender} module, which is responsible for graph-based recommendations and explanations.
 
 \begin{figure}[Hybrid Recommendations Diagram]{FIG:HYBRID_RECS}{A diagram of the generation of hybrid recommendations.}
     \includegraphics[width=\textwidth]{recommendations_hybrid.pdf}
@@ -7,7 +7,7 @@ The system employs a hybrid recommendation strategy that adapts to the user's in
 A key decision point in the workflow is whether the user has rated at least three items. If not, the system operates in a ``cold-start'' mode, relying exclusively on a contextual recommendation method.
 
 \paragraph{Contextual Recommendations for Cold-Start Scenarios}
-In cold-start situations or when a user's request is highly specific, the system utilizes a graph-based contextual recommender. This component provides the system with its contextual reasoning capabilities, akin to a Graph-\ac{rag} approach. The process for generating these recommendations is depicted in Figure~\ref{FIG:REC_CTX}.
+In cold-start situations or when a user's request is highly specific, the system utilizes a graph-based contextual recommender. This component provides the system with its contextual reasoning capabilities, effectively implementing the Graph-\ac{rag} paradigm. The process for generating these recommendations is depicted in Figure~\ref{FIG:REC_CTX}.
 
 \begin{figure}[Contextual Recommendations Diagram]{FIG:REC_CTX}{A diagram of the contextual recommendation process.}
     \includegraphics[width=0.8\textwidth]{recommendations_contextual.pdf}
